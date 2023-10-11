@@ -35,11 +35,25 @@ using namespace std;
 vector<int> TwoSum(vector<int> sum, int target)
 {
     vector<int> result;
-    // Sort the sum vector and then traverse in the vector to find the required indices
+    for (int i = 0; i < sum.size(); i++)
+    {
+        for (int j = i + 1; j < sum.size(); j++)
+        {
+            if (sum[i] + sum[j] == target)
+            {
+                result.push_back(i);
+                result.push_back(j);
+            }
+        }
+    }
     return result;
 }
 int main()
 {
-    TwoSum({8, 3, 4, 7}, 5);
+    vector<int> r = TwoSum({2, 4, 5, 6}, 9);
+    for (int element : r)
+    {
+        cout << element << " ";
+    }
     return 0;
 }
