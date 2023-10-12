@@ -24,6 +24,7 @@ The number of nodes in each linked list is in the range [1, 100].
 It is guaranteed that the list represents a number that does not have leading zeros.
 */
 #include <iostream>
+#include <vector>
 using namespace std;
 struct ListNode
 {
@@ -38,6 +39,7 @@ class Solution
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
+        vector<int> nodeV;
         ListNode *l3 = new ListNode;
         int carry = 0;
         int placeholder = 0;
@@ -49,18 +51,21 @@ public:
                 {
                     if (l2->val + placeholder + carry > 9)
                     {
-                        cout << (l2->val + placeholder + carry) % 10 << " "; // Add this to L3.
+                        // cout << (l2->val + placeholder + carry) % 10 << " ";
+                        nodeV.push_back((l2->val + placeholder + carry) % 10);
                         carry = 1;
                     }
                     else
                     {
-                        cout << (l2->val + placeholder + carry) << " "; // Add this to L3.
+                        // cout << (l2->val + placeholder + carry) << " ";
+                        nodeV.push_back((l2->val + placeholder + carry));
                         carry = 0;
                     }
                 }
                 else
                 {
-                    cout << (l2->val + placeholder) << " "; // Add this to L3.
+                    // cout << (l2->val + placeholder) << " ";
+                    nodeV.push_back((l2->val + placeholder));
                     carry = 0;
                 }
                 l2 = l2->next;
@@ -71,18 +76,21 @@ public:
                 {
                     if (l1->val + placeholder + carry > 9)
                     {
-                        cout << (l1->val + placeholder + carry) % 10 << " "; // Add this to L3.
+                        // cout << (l1->val + placeholder + carry) % 10 << " ";
+                        nodeV.push_back((l1->val + placeholder + carry) % 10);
                         carry = 1;
                     }
                     else
                     {
-                        cout << (l1->val + placeholder + carry) << " "; // Add this to L3.
+                        // cout << (l1->val + placeholder + carry) << " ";
+                        nodeV.push_back((l1->val + placeholder + carry));
                         carry = 0;
                     }
                 }
                 else
                 {
-                    cout << (l1->val + placeholder) << " "; // Add this to L3.
+                    // cout << (l1->val + placeholder) << " ";
+                    nodeV.push_back((l1->val + placeholder));
                     carry = 0;
                 }
                 l1 = l1->next;
@@ -95,18 +103,21 @@ public:
                     {
                         if (l1->val + l2->val + carry > 9)
                         {
-                            cout << (l1->val + l2->val + carry) % 10 << " "; // Add this to L3.
+                            // cout << (l1->val + l2->val + carry) % 10 << " ";
+                            nodeV.push_back((l1->val + l2->val + carry) % 10);
                             carry = 1;
                         }
                         else
                         {
-                            cout << (l1->val + l2->val + carry) << " "; // Add this to L3.
+                            // cout << (l1->val + l2->val + carry) << " ";
+                            nodeV.push_back((l1->val + l2->val + carry));
                             carry = 0;
                         }
                     }
                     else
                     {
-                        cout << (l1->val + l2->val) % 10 << " "; // Add this to L3.
+                        // cout << (l1->val + l2->val) % 10 << " ";
+                        nodeV.push_back((l1->val + l2->val) % 10);
                         carry = 1;
                     }
                 }
@@ -116,18 +127,21 @@ public:
                     {
                         if (l1->val + l2->val + carry > 9)
                         {
-                            cout << (l1->val + l2->val + carry) % 10 << " "; // Add this to L3.
+                            // cout << (l1->val + l2->val + carry) % 10 << " ";
+                            nodeV.push_back((l1->val + l2->val + carry) % 10);
                             carry = 1;
                         }
                         else
                         {
-                            cout << (l1->val + l2->val + carry) << " "; // Add this to L3.
+                            // cout << (l1->val + l2->val + carry) << " ";
+                            nodeV.push_back((l1->val + l2->val + carry));
                             carry = 0;
                         }
                     }
                     else
                     {
-                        cout << (l1->val + l2->val) << " "; // Add this to L3.
+                        // cout << (l1->val + l2->val) << " ";
+                        nodeV.push_back((l1->val + l2->val));
                         carry = 0;
                     }
                 }
@@ -137,7 +151,32 @@ public:
         }
 
         if (carry != 0)
-            cout << 1; // Add this to L3.
-        return l3;
+        {
+            // cout << 1;
+            nodeV.push_back(1);
+        }
+
+        ListNode *head, *tail;
+        head = NULL;
+        tail = NULL;
+
+        for (int element : nodeV)
+        {
+            ListNode *temp = new ListNode;
+            temp->val = element;
+            temp->next = NULL;
+            if (head == NULL)
+            {
+                head = temp;
+                tail = temp;
+            }
+            else
+            {
+                tail->next = temp;
+                tail = temp;
+            }
+        }
+
+        return head;
     }
 };
