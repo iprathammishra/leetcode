@@ -23,8 +23,22 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 */
 #include <iostream>
+#include <vector>
 using namespace std;
+int longestSubstring(string text)
+{
+    vector<char> data;
+    vector<string> result;
+    for (int i = 0; i < text.length(); i++)
+    {
+        data.push_back(text[i]);
+    }
+    // Traverse in data in such a way that you only consider the char(s) only once. For example for int 1: (p) is complete move to int 2: (pw) is complete move to int 3: (pww) is not complete so move to (wwk) which is also not complete so move to (wke) which is complete so move to int 4: like that.
+    cout << endl;
+    return 0;
+}
 int main()
 {
+    cout << longestSubstring("pwwkew");
     return 0;
 }
