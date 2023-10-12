@@ -25,7 +25,119 @@ It is guaranteed that the list represents a number that does not have leading ze
 */
 #include <iostream>
 using namespace std;
-int main()
+struct ListNode
 {
-    return 0;
-}
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+class Solution
+{
+public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+    {
+        ListNode *l3 = new ListNode;
+        int carry = 0;
+        int placeholder = 0;
+        while (l1 != NULL || l2 != NULL)
+        {
+            if (l1 == NULL)
+            {
+                if (carry != 0)
+                {
+                    if (l2->val + placeholder + carry > 9)
+                    {
+                        cout << (l2->val + placeholder + carry) % 10 << " "; // Add this to L3.
+                        carry = 1;
+                    }
+                    else
+                    {
+                        cout << (l2->val + placeholder + carry) << " "; // Add this to L3.
+                        carry = 0;
+                    }
+                }
+                else
+                {
+                    cout << (l2->val + placeholder) << " "; // Add this to L3.
+                    carry = 0;
+                }
+                l2 = l2->next;
+            }
+            else if (l2 == NULL)
+            {
+                if (carry != 0)
+                {
+                    if (l1->val + placeholder + carry > 9)
+                    {
+                        cout << (l1->val + placeholder + carry) % 10 << " "; // Add this to L3.
+                        carry = 1;
+                    }
+                    else
+                    {
+                        cout << (l1->val + placeholder + carry) << " "; // Add this to L3.
+                        carry = 0;
+                    }
+                }
+                else
+                {
+                    cout << (l1->val + placeholder) << " "; // Add this to L3.
+                    carry = 0;
+                }
+                l1 = l1->next;
+            }
+            else
+            {
+                if (l1->val + l2->val > 9)
+                {
+                    if (carry != 0)
+                    {
+                        if (l1->val + l2->val + carry > 9)
+                        {
+                            cout << (l1->val + l2->val + carry) % 10 << " "; // Add this to L3.
+                            carry = 1;
+                        }
+                        else
+                        {
+                            cout << (l1->val + l2->val + carry) << " "; // Add this to L3.
+                            carry = 0;
+                        }
+                    }
+                    else
+                    {
+                        cout << (l1->val + l2->val) % 10 << " "; // Add this to L3.
+                        carry = 1;
+                    }
+                }
+                else
+                {
+                    if (carry != 0)
+                    {
+                        if (l1->val + l2->val + carry > 9)
+                        {
+                            cout << (l1->val + l2->val + carry) % 10 << " "; // Add this to L3.
+                            carry = 1;
+                        }
+                        else
+                        {
+                            cout << (l1->val + l2->val + carry) << " "; // Add this to L3.
+                            carry = 0;
+                        }
+                    }
+                    else
+                    {
+                        cout << (l1->val + l2->val) << " "; // Add this to L3.
+                        carry = 0;
+                    }
+                }
+                l1 = l1->next;
+                l2 = l2->next;
+            }
+        }
+
+        if (carry != 0)
+            cout << 1; // Add this to L3.
+        return l3;
+    }
+};
