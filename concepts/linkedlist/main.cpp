@@ -17,6 +17,7 @@ public:
         tail = NULL;
     }
     void insertNodeAtFront(int value);
+    void insertNodeAtBack(int value);
     void display();
 };
 void LinkedList::insertNodeAtFront(int value)
@@ -35,6 +36,23 @@ void LinkedList::insertNodeAtFront(int value)
         newNode->next = head;
         head = newNode;
         return;
+    }
+}
+void LinkedList::insertNodeAtBack(int value)
+{
+    Node *newNode = new Node;
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+    }
+    else
+    {
+        tail->next = newNode;
+        tail = newNode;
     }
 }
 void LinkedList::display()
@@ -56,9 +74,10 @@ int main()
     l1.insertNodeAtFront(3);
 
     LinkedList l2;
-    l2.insertNodeAtFront(4);
-    l2.insertNodeAtFront(5);
-    l2.insertNodeAtFront(6);
+    l2.insertNodeAtBack(4);
+    l2.insertNodeAtBack(5);
+    l2.insertNodeAtBack(6);
+    l2.display();
 
     return 0;
 }
