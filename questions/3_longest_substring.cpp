@@ -27,18 +27,81 @@ s consists of English letters, digits, symbols and spaces.
 using namespace std;
 int longestSubstring(string text)
 {
+    if (text.length() == 0)
+        return 0;
+    vector<char> onlyRep;
     vector<char> data;
-    vector<string> result;
+    int counter = 2;
+    int mainN;
     for (int i = 0; i < text.length(); i++)
     {
         data.push_back(text[i]);
     }
-    // Traverse in data in such a way that you only consider the char(s) only once. For example for int 1: (p) is complete move to int 2: (pw) is complete move to int 3: (pww) is not complete so move to (wwk) which is also not complete so move to (wke) which is complete so move to int 4: like that.
-    cout << endl;
-    return 0;
+    onlyRep = data;
+    for (int i = 0; i <= onlyRep.size() + 1; i++)
+    {
+        for (int j = i + 1; j <= onlyRep.size() + 1; j++)
+        {
+            if (onlyRep[i] == onlyRep[j])
+            {
+                onlyRep.erase(onlyRep.begin() + i);
+            }
+        }
+    }
+    if (onlyRep.size() == 1)
+        return 1;
+    vector<char> compare;
+    int length = data.size();
+    int carry = 0;
+    while (counter <= length)
+    {
+        for (int n = 0; n < length; n++)
+        {
+            for (int m = n; m < counter + carry; m++)
+            {
+                if (m == length || (counter + carry) > length)
+                    break;
+                else
+                    compare.push_back(data[m]);
+            }
+            bool flag = false;
+            bool fi = false;
+            for (int i = 0; i < compare.size(); i++)
+            {
+                for (int j = i + 1; j < compare.size(); j++)
+                {
+                    if (compare[i] == compare[j])
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag == true)
+                {
+                    fi = true;
+                    break;
+                }
+            }
+            if (fi == false)
+            {
+                for (char element : compare)
+                {
+                    mainN = compare.size();
+                }
+            }
+            compare = {};
+            carry++;
+            if (flag == false)
+                break;
+        }
+        counter++;
+        carry = 0;
+    }
+    return mainN;
 }
+
 int main()
 {
-    cout << longestSubstring("pwwkew");
+    cout << longestSubstring("abcabc*& 6typpppppe");
     return 0;
 }
