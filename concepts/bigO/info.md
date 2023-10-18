@@ -1,18 +1,17 @@
-## Concepts and important questions on BigO Notation Concept.
+## Big O.
 
-### Topics
+- What is Big O?
+- What is Time and Space Complexity?
+- Why is time complexity a function of its input size?
+- Big O Complexity Chart
+- Big O Time Complexity Examples.
+  - Constant Time: O(1)
+  - Linear Time: O(n)
+  - Logarithmic Time: O(log n)
+  - Quadratic Time: O(n^2)
+  - Exponential Time: O(2^n)
 
-- Big O Notation.
-- Time Complexity.
-- Space Complexity.
-- Common Time Complexities.
-- Data Structures.
-- Sorting and Searching.
-- Recursion and Divide-and-Conquer.
-- Dynamic Programming.
-- Amortized Analysis.
-- Space Complexity Considerations.
-- Algorithm Design Paradigms.
-- Practice.
-- Performance Trade-offs.
-- Real-World Applications.
+### Source for Interview Questions:
+
+- [Geek](https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/)
+- [Interviewprep](https://interviewprep.org/big-o-notation-interview-questions/)
