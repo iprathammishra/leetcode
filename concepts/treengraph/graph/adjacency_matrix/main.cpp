@@ -7,6 +7,7 @@ private:
     int numVertices;
 
 public:
+    // Initialize the matrix to zero
     Graph(int numVertices)
     {
         this->numVertices = numVertices;
