@@ -42,7 +42,7 @@ int main()
     // find the array's length
     int size = sizeof(data) / sizeof(data[0]);
     bubbleSort(data, size);
-    cout << "Sorted array in ascending order: " << endl;
+    cout << "Sorted array in ascending order= " << endl;
     printArray(data, size);
     return 0;
 }
