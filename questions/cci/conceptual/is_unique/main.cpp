@@ -22,3 +22,5 @@ int main()
     cout << isUnique(text);
     return 0;
 }
+
+// If additional data structures are not allowed than we can implement this with O(n^2) using nested loops and comparing values.
