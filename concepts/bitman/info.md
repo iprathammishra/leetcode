@@ -6,7 +6,7 @@ Example:
 Input: N = 100000000000, M = 10011, i = 2, j = 6
 Output: N = 10001001100
 
-2. **Binary to String:** Given a real number betweeen 0 and 1 (e.g., 0.72) that is passes in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
+2. **Binary to String:** Given a real number betweeen 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
 
 3. **Flip Bit to Win:** You have an integer and you can flip exactly onw bit from 0 to a 1. Write code to find the length of the longest sequence of 1s you could create.
 
