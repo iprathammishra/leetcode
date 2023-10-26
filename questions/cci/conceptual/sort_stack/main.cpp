@@ -66,7 +66,6 @@ void Stack::displayOriginal()
 void Stack::displaySorted()
 {
     Stack tempStack;
-    Node *temp = top;
     while (!isEmpty())
     {
         int temp = peek();
