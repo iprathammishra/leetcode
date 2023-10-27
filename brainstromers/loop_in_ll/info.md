@@ -1,6 +1,6 @@
 # Detection of the Node that is Creating a Cyclic LinkedList or Creating a Loop in the LinkedList (Cycle Detection Algorithm)
 
-To detect and return the node at the beginning of a loop in a circular linked list, you can use `Floyd's Tortoise` and `Hare Algorithm`, also known as the Cycle Detection algorithm.
+To detect and return the node at the beginning of a loop in a circular linked list, you can use `Floyd's Tortoise and Hare Algorithm`, also known as the Cycle Detection algorithm.
 
 ```cpp
 ListNode *detectLoop(ListNode *n)
