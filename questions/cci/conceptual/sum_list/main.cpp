@@ -9,7 +9,9 @@
 // Input: (6->1->7) + (2->9->5). That is, 617 + 295.
 // Output: 9->1->2. That is, 912.
 #include <iostream>
+#include <vector>
 using namespace std;
+
 class Node
 {
 public:
@@ -21,6 +23,7 @@ class LinkedList
 {
 private:
     Node *head, *tail;
+    vector<int> v1, v2;
 
 public:
     LinkedList() : head(nullptr), tail(nullptr) {}
@@ -76,8 +79,198 @@ public:
         }
         cout << endl;
     }
-    Node *returnSumForReverseOrderList(Node *l1, Node *l2) {}
-    Node *returnSumForForwardOrderList(Node *l1, Node *l2) {}
+    Node *returnSumForReverseOrderList(Node *l1, Node *l2)
+    {
+        Node *runner = l1;
+        int length = 0;
+        int carry = 0;
+        while (runner)
+        {
+            v1.push_back(runner->data);
+            runner = runner->next;
+        }
+        runner = l2;
+        while (runner)
+        {
+            v2.push_back(runner->data);
+            runner = runner->next;
+        }
+        if (v1.size() > v2.size())
+        {
+            length = v1.size();
+            v2.insert(v2.begin(), (length - v2.size()), 0); // the lower end
+        }
+        else
+        {
+            length = v2.size();
+            v1.insert(v1.end(), (length - v1.size()), 0); // the upper end
+        }
+        Node *secondHead = nullptr;
+        Node *secondTail = nullptr;
+        for (int i = 0; i < length; i++)
+        {
+            int addition = v1[i] + v2[i];
+            if (carry == 0)
+            {
+                if (addition > 9)
+                {
+                    carry = 1;
+                    Node *newNode = new Node(addition % 10);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        secondTail->next = newNode;
+                        secondTail = newNode;
+                    }
+                }
+                else
+                {
+                    carry = 0;
+                    Node *newNode = new Node(addition);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        secondTail->next = newNode;
+                        secondTail = newNode;
+                    }
+                }
+            }
+            else
+            {
+                if (addition > 9 || addition + 1 > 9)
+                {
+                    carry = 1;
+                    Node *newNode = new Node((addition + 1) % 10);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        secondTail->next = newNode;
+                        secondTail = newNode;
+                    }
+                }
+                else
+                {
+                    carry = 0;
+                    Node *newNode = new Node(addition + 1);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        secondTail->next = newNode;
+                        secondTail = newNode;
+                    }
+                }
+            }
+        }
+        if (carry == 1)
+        {
+            Node *newNode = new Node(1);
+            secondTail->next = newNode;
+            secondTail = newNode;
+        }
+        v1.clear();
+        v2.clear();
+        return secondHead;
+    }
+    Node *returnSumForForwardOrderList(Node *l1, Node *l2)
+    {
+        Node *runner = l1;
+        int length = 0;
+        int carry = 0;
+        while (runner)
+        {
+            v1.insert(v1.begin(), 1, runner->data);
+            runner = runner->next;
+        }
+        runner = l2;
+        while (runner)
+        {
+            v2.insert(v2.begin(), 1, runner->data);
+            runner = runner->next;
+        }
+        if (v1.size() > v2.size())
+        {
+            length = v1.size();
+            v2.insert(v2.begin(), (length - v2.size()), 0); // the lower end
+        }
+        else
+        {
+            length = v2.size();
+            v1.insert(v1.end(), (length - v1.size()), 0); // the upper end
+        }
+        Node *secondHead = nullptr;
+        Node *secondTail = nullptr;
+        for (int i = 0; i < length; i++)
+        {
+            int addition = v1[i] + v2[i];
+            if (carry == 0)
+            {
+                if (addition > 9)
+                {
+                    carry = 1;
+                    Node *newNode = new Node(addition % 10);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        newNode->next = secondHead;
+                        secondHead = newNode;
+                    }
+                }
+                else
+                {
+                    carry = 0;
+                    Node *newNode = new Node(addition);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        newNode->next = secondHead;
+                        secondHead = newNode;
+                    }
+                }
+            }
+            else
+            {
+                if (addition > 9 || addition + 1 > 9)
+                {
+                    carry = 1;
+                    Node *newNode = new Node((addition + 1) % 10);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        newNode->next = secondHead;
+                        secondHead = newNode;
+                    }
+                }
+                else
+                {
+                    carry = 0;
+                    Node *newNode = new Node(addition + 1);
+                    if (!secondHead)
+                        secondHead = secondTail = newNode;
+                    else
+                    {
+                        newNode->next = secondHead;
+                        secondHead = newNode;
+                    }
+                }
+            }
+        }
+        if (carry == 1)
+        {
+            Node *newNode = new Node(1);
+            newNode->next = secondHead;
+            secondHead = newNode;
+        }
+        v1.clear();
+        v2.clear();
+        return secondHead;
+    }
 };
 int main()
 {
