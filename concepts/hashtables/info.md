@@ -23,7 +23,7 @@ Example:
 Input: "Mr John Smith "
 Output: "Mr%20John%20Smith" -->
 
-4. **Palindrome Permutation:** Given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase that is the sae forwards and backwards. A permutation is a rearrangement of letter. The palindrome does not need to be limited to just dictonary words.
+4. **Palindrome Permutation:** Given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase that is the same in forwards and backwards. A permutation is a rearrangement of letter. The palindrome does not need to be limited to just dictonary words.
 
 Example:
 Input: Tact Coa
