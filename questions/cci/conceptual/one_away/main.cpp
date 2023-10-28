@@ -24,7 +24,7 @@ bool isOneAway(const string &str1, const string &str2)
             if (counterBool)
                 return false;
             counterBool = true;
-            if (shorter.length() == longer.length() && counterBool)
+            if (shorter.length() == longer.length())
                 index1++;
         }
         else
