@@ -18,3 +18,5 @@ In programming, `implicit` and `explicit` refer to different ways of performing 
 2. **Explicit:** Explicit operations or type conversions require specific instructions from the programmer to indicate their intent. This ensures clarity and precision. For example, in C++, you can use the `static_cast` keyword to explicitly convert one data type to another.
 
 In short, `implicit` actions occur automatically, while `explicit` actions require deliberate programmer intervention for clarity and control.
+
+### Why do we use `&` and `const` with `string` datatype as a paramter in some methods in C++?
