@@ -65,3 +65,7 @@ int main() {
 ```
 
 In this example, `processString` takes a `const` reference to a string, allowing you to pass both non-constant and constant strings to the function while ensuring safety and efficiency. It also communicates the intent that the function doesn't modify the input string.
+
+### Is there a way to create a matrix with O(N) or any other time complexity better than O(N^2)?
+
+Creating a matrix with O(N) time complexity is not possible beacuse you need to initialize N\*N elements in the matrix, which inherently requires at least O(N^2) operations.
