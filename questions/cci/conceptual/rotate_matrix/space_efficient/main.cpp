@@ -16,6 +16,24 @@ void deleteMatrix(int **matrix, int n)
 }
 void rotateMatrixBy90Degree(int **matrix, int n)
 {
+    for (int layer = 0; layer < n / 2; layer++)
+    {
+        int first = layer;
+        int last = n - 1 - layer;
+        for (int i = first; i < last; i++)
+        {
+            int offset = i - first;
+            int top = matrix[first][i]; // SAVE TOP ELEMENT
+            // LEFT -> TOP
+            matrix[first][i] = matrix[last - offset][last];
+            // BOTTOM -> LEFT
+            matrix[last - offset][last] = matrix[last][last - offset];
+            // RIGHT -> BOTTOM
+            matrix[last][last - offset] = matrix[i][last];
+            // TOP -> RIGHT
+            matrix[i][last] = top;
+        }
+    }
 }
 void displayMatrix(int **matrix, int n)
 {
