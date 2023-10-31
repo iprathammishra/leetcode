@@ -1,6 +1,6 @@
 ## Interview Questions
 
-1. **Route Between Nodes:** Given a directed graph, design an algorithm to find out wheter there is a route between two nodes.
+1. **Route Between Nodes:** Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
 2. **Minimal Tree:** Given a sorted (incresing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
 
