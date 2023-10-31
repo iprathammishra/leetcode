@@ -69,3 +69,89 @@ In this example, `processString` takes a `const` reference to a string, allowing
 ### Is there a way to create a matrix with O(N) or any other time complexity better than O(N^2)?
 
 Creating a matrix with O(N) time complexity is not possible beacuse you need to initialize N\*N elements in the matrix, which inherently requires at least O(N^2) operations.
+
+### Is there a way to travese a tree iteratively. If yes, why do we not prefer it much.
+
+Yes, it is possible to traverse tree iteratively, and in fact, iterative tree traversal is commonly used, especially for large trees or when you want to conserve memory or avoid the overhead of function call recursion.
+
+The main reason why iterative tree traversal is not preferred as much as recursive traversal in many educational or illustrative contexts is that recursive traversal is often easier to understand and implement. It tends to be more straightforward to teach and comprehend, especially for those who are new to data structures and algorithms. Recursive traversal can akso make code more concise and readable.
+
+However, there are some reasons to prefer iterative tree traversal:
+
+1. **Reduced Memory Usage:** Recursive traversal typically uses the call stack, which can consume a lot of memory for deep trees. Iterative traversal often uses a data structure (e.g., a stack or queue) to manage nodes, which can be more memory-efficient for deep trees.
+2. **Explicit Control:** Iterative traversal gives you more explicit control over the traversal process, which can be helpful in certain situations, such as when you need to interrupt or modify the traversal logic based on specific conditions.
+3. **Performance:** In some cases, iterative can be faster than recursive traversal due to reduced function call overhead. This can be important for time-critical applications.
+
+Here's a simple example of iterative inorder traversal.
+
+```cpp
+void iterativeInorderTraversal(Node *root) {
+    stack<Node*> s;
+    Node *current = root;
+
+    while (current || !s.empty()) {
+        while (current) {
+            s.push(current);
+            current = current->left;
+        }
+        current = s.top();
+        s.pop();
+        cout << current->data << " ";
+        current = current->right;
+    }
+}
+```
+
+Here's a simple example of iterative preorder traversal.
+
+```cpp
+void iterativePreorderTraversal(Node* root) {
+    if (!root) return;
+
+    stack<Node*> s;
+    s.push(root);
+
+    while (!s.empty()) {
+        Node* current = s.top();
+        s.pop();
+        cout << current->data << " ";
+
+        if (current->right) {
+            s.push(current->right);
+        }
+        if (current->left) {
+            s.push(current->left);
+        }
+    }
+}
+```
+
+Here's a simple example of iterative postorder traversal.
+
+```cpp
+void iterativePostorderTraversal(Node* root) {
+    if (!root) return;
+
+    stack<Node*> s1, s2;
+    s1.push(root);
+
+    while (!s1.empty()) {
+        Node* current = s1.top();
+        s1.pop();
+        s2.push(current);
+
+        if (current->left) {
+            s1.push(current->left);
+        }
+        if (current->right) {
+            s1.push(current->right);
+        }
+    }
+
+    while (!s2.empty()) {
+        Node* current = s2.top();
+        s2.pop();
+        cout << current->data << " ";
+    }
+}
+```
