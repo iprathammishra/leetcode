@@ -43,7 +43,7 @@ pale, bake -> false -->
 
 <!-- 8. **Zero Matrix:** Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0. -->
 
-9. **String Rotation:** Assume you have method isSubstring which checks if one word is a substring of another. Given two strings, S1 and S2, write a code to check if S2 is a rotation of S1 using only one call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat").
+<!-- 9. **String Rotation:** Assume you have method isSubstring which checks if one word is a substring of another. Given two strings, S1 and S2, write a code to check if S2 is a rotation of S1 using only one call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat"). -->
 
 ### Interview Questions
 
