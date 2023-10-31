@@ -155,3 +155,15 @@ void iterativePostorderTraversal(Node* root) {
     }
 }
 ```
+
+### Is there a more easier and efficient way than stack that is used here?
+
+Using a stack is a common and efficient way to perform iterative tree traversals, and it's widely used because it provides a straightforward and efficient mechanism to simulate the recursive call stack. In terms of simplicity and efficiency, a stack is a good choice for these traversals.
+
+However, there are alternative data structures and approaches you can for tree traversal, but they may not necessarily be easier or mroe efficient:
+
+1. **Morris Traversal:** Morris Traversal is an efficient and space-saving way to perform in-order and pre-order tree traversals without using an explicit stack. It modifies the tree's structure temporarily to avoid the need for a stack. While it can be more memory-efficient, it's not necessarily easier to understand.
+2. **Queue for Level-Order Traversal:** For level-order (BFS) traversal, you can use a queue instead of a stack. While it's conceptually simpler for BFS, it's not applicable to pre-order or post-order traversals, and the nature of the problem may not allow a more efficient alternative.
+3. **Threaded Binary Trees:** In threaded binary trees, threads are used to navigate between nodes without a stack or recursion. This approach is complex and typically used in specialized scenarios.
+
+In general, using a stack is the most straightforward and efficient way got iterative tree traversals in most cases. If you are looking for simplicity and readability in your code, it's usually best to stick with the stack-based approach. It's also a widely accepted and understood practice among developers.
