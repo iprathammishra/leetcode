@@ -38,11 +38,14 @@ void postorderTraversal(Node *node)
 
 int main()
 {
-    Node *root = new Node(1);
+    Node *root = new Node(3);
     root->left = new Node(12);
-    root->right = new Node(9);
-    root->left->left = new Node(5);
-    root->left->right = new Node(6);
+    root->left->right = new Node(4);
+    root->left->left = new Node(1);
+    root->left->left->left = new Node(2);
+    root->right = new Node(6);
+    root->right->left = new Node(10);
+    root->right->right = new Node(9);
 
     cout << "Inorder Traversal: ";
     inorderTraversal(root);
