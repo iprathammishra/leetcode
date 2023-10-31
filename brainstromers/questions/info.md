@@ -156,7 +156,7 @@ void iterativePostorderTraversal(Node* root) {
 }
 ```
 
-### Is there a more easier and efficient way than stack that is used here?
+### `Follow Up:` Is there a more easier and efficient way than stack that is used here?
 
 Using a stack is a common and efficient way to perform iterative tree traversals, and it's widely used because it provides a straightforward and efficient mechanism to simulate the recursive call stack. In terms of simplicity and efficiency, a stack is a good choice for these traversals.
 
