@@ -167,3 +167,202 @@ However, there are alternative data structures and approaches you can for tree t
 3. **Threaded Binary Trees:** In threaded binary trees, threads are used to navigate between nodes without a stack or recursion. This approach is complex and typically used in specialized scenarios.
 
 In general, using a stack is the most straightforward and efficient way got iterative tree traversals in most cases. If you are looking for simplicity and readability in your code, it's usually best to stick with the stack-based approach. It's also a widely accepted and understood practice among developers.
+
+### Explain the `deleteNode` operation of `BST`.
+
+Implementation.
+
+```cpp
+void deleteNode(int value) {
+    Node* parent = nullptr;
+    Node* current = root;
+
+    while (current != nullptr && current->data != value) {
+        parent = current;
+        if (value < current->data) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
+
+    if (current == nullptr) {
+        // Value not found in the tree
+        return;
+    }
+
+    if (current->left == nullptr) {
+        if (parent == nullptr) {
+            root = current->right;
+        } else if (parent->left == current) {
+            parent->left = current->right;
+        } else {
+            parent->right = current->right;
+        }
+        delete current;
+    } else if (current->right == nullptr) {
+        if (parent == nullptr) {
+            root = current->left;
+        } else if (parent->left == current) {
+            parent->left = current->left;
+        } else {
+            parent->right = current->left;
+        }
+        delete current;
+    } else {
+        Node* successor = current->right;
+        parent = current;
+        while (successor->left != nullptr) {
+            parent = successor;
+            successor = successor->left;
+        }
+
+        current->data = successor->data;
+
+        if (parent->left == successor) {
+            parent->left = successor->right;
+        } else {
+            parent->right = successor->right;
+        }
+        delete successor;
+    }
+}
+```
+
+Let's understand what is going on in here.
+
+```cpp
+if (current->left == nullptr) {
+    if (parent == nullptr)
+        root = current->right;
+    else if (parent->left == current)
+        parent->left = current->right;
+    else
+        parent->right = current->right;
+    delete current;
+}
+```
+
+The code mentioned above is the part of the `deleteNode` method in a Binary Search Tree (BST) and handles the case where the node to be deleted (`current`) has no left child. In this case, the code does the following:
+
+1. If `current->left` is `nullptr`, it means that the node to be deleted has no left child.
+2. If `parent` is also `nullptr`, it means that the node to be deleted is the root of the BST.
+3. If `parent` is not `nullptr`, it means that the node to be deleted is not the root, and we need to update the parent's pointer to the appropriate child node.
+
+- If `parent->left == current`, it means that the node to be deleted is the left child of the parent, so we set `parent->left` to `current->right`. This effectively "removes" `current` from the tree, and the right child of `current` (if it exists) becomes the new left child of `parent`.
+- If `parent->left != current`, it means that the node to be deleted is the right child of the parent, so we set `parent->right` to `current->right`. This also effectively removes `current` from the tree, and the right child of `current` (if it exists) becomes the new right child of `parent`.
+
+4. After updating the parent's pointer, we delete the `current` node using `delete current;` to free the memory occupied by the node.
+
+This code handles the case when a node with no child is to be deleted and ensures that the BST remains valid after the deletion. If the deleted node had a right child, that right child becomes the direct child of the parent node, maintaining the binary search tree property.
+<br>
+
+Now, let's see this case:
+
+```cpp
+Node* successor = current->right;
+    parent = current;
+    while (successor->left != nullptr) {
+        parent = successor;
+        successor = successor->left;
+    }
+
+    current->data = successor->data;
+
+    if (parent->left == successor) {
+        parent->left = successor->right;
+    } else {
+        parent->right = successor->right;
+    }
+    delete successor;
+```
+
+This code in `deleteNode` handles the case when the node to be deleted (`current`) has both a left and a right child. This is typically the most complex case in BST deletion. Here's what's happening:
+
+1. `Node *successor = current->right;`: In this linem we're initializing the `successor` pointer to the right child of the node to be deleted (`current`). This is because when you delete a node with two children, you need to replace it with the "in-order successor" from its right subtree. The in-order successor is the smallest node in the right subtree, which will preserve the BST's order.
+2. `parent = current;`: Wr're also initializing the `parent` pointer to `current`. We'll use this `parent` pointer to keep track of the parent of the `successor` as we search for the in-order successor.
+3. The `while (successor->left != nullptr)` loop is used to find the in-order successor. It iteratively traverses the left children of the `successor` node until it reaches the smallest (leftmost) node in the right subtree.
+4. `current->data = successor->data;`: Once we've found the in-order successor, we copy the data of the in-order successor into the `current` node. This effectively "replaces" the `current` node with its in-order successor.
+5. The `if (parent->left == successor)` block or the `else` block that follows it is used to update the parent's pointer to the `succcessor` node.
+
+- If `parent->left == successor`, it means that the in-order successor was the left child of the parent. So, we update `parent->left` to point to `successor->right`, effectively removing the in-order successor from its position.
+- If `parent->left != successor`, it means that the in-order successor was not the left child but somewhere deeper in the right subtree. So, we update `parent->right` to point to `successor->right`.
+
+6. Finally, `delete successor;` is used to deallocate the memory occupied by the in-order successor, as it has been moved into the `current` node.
+
+By following these steps, you effectively delete a node with two children while maintaining the binary search tree property. The in-order successor from the right subtree is used to maintain the ordering of the BST.
+<br>
+
+`In-order Successor?`
+<br>
+
+The in-order successor of a mode in Binary Search Tree (BST) is the node that has the smallest key value that is greater than the key value of the given node. In other words, it's the node that represents the next value in the sorted order when performing an in-order traversal of the BST.
+
+To find the in-order successor of a node, you typically follow these rules:
+
+1. If the node has a right child, the in-order successor is the leftmost (smallest) node in the right subtree of the current node. You traverse left from the right child until you reach the leftmost node.
+2. If the node does not have a right child, you need to move up the tree to find the in-order successor. You move up the tree from the current node toward the root until you find a node where you are coming from its left subtree. The parent of this node is the in-order successor.
+
+Finding the in-order successor is essential when you want to delete a node from a BST with two children. The in-order successor is used to replace the node you are deleting, ensuring that the BST's properties are maintained.
+
+In summary, the in-order successor is the next node in the in-order traversal of the BST and can be found by following specific rules based on the structure of the tree.
+
+Let's undertand this with an `example`.
+
+Suppose we have the following BST:
+
+```txt
+        50
+       /  \
+     30    70
+    / \   /  \
+  20  40 60  80
+
+```
+
+We want to delete the node with the value 50. Here are the steps:
+
+1. Start at the root and traverse the tree to find the node with the value to be deleted, in this case, 50. We keep track of the current node and its parent as we traverse the tree.
+
+- We start at the root (current = 50).
+- Compare 50 with the value to be deleted (50).
+- We found the node we want to delete.
+
+2. Determine the number of children the node to be deleted has.
+
+- The node with value 50 has two children (30 on the left and 70 on the right).
+
+3. Case 1: If the node to be deleted has no children or one child:
+
+- In our case, this is not applicable because the node with the value 50 has two children.
+
+4. Case 2: If the node to be deleted has two children:
+
+- Find the in-order successor of the node to be deleted. In this case, it's the smallest node in the right subtree of the node to be deleted.
+- The in-order successor is 60 (the leftnost node in the right subtreee of the node with value 50).
+
+5. Replace the value of the node to be deleted with the value of the in-order successor.
+
+- Replace 50 with 60.
+
+```txt
+        60
+       /  \
+     30    70
+    / \   /  \
+  20  40 60  80
+```
+
+1. Remove the in-order successor from its orginal position in the right subtree.
+
+- The original node with value 60 in the right subtree is now a duplicate, so you can remove it.
+
+```txt
+        60
+       /  \
+     30    70
+    / \      \
+  20  40     80
+```
+
+Now, you've successfully deleted the node with the value 50 from BST, and the tree maintains its binary search tree properties. The in-order traversal of the modified tree will give you the sorted order of the elements.
