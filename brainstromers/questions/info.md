@@ -366,3 +366,33 @@ We want to delete the node with the value 50. Here are the steps:
 ```
 
 Now, you've successfully deleted the node with the value 50 from BST, and the tree maintains its binary search tree properties. The in-order traversal of the modified tree will give you the sorted order of the elements.
+
+### What is the purpose of having inorder, preorder and postorder traversals?
+
+In computer science and data structures, the purpose of having in-order, pre-order, and post-order traversals for binary trees, including Binary Search Trees (BSTs), is to enable various operations and analyses on the tree's nodes. Each of these traversal orders serves a specific purpose and can be used in for different types of tree-related tasks:
+
+1. **In-Order Traversal (Left-Root-Right)**:
+
+- Purpose: In-order traversal is primarily used for visiting the nodes of binary tree in sorted order. It allows you to access the nodes in ascending order of their keys or values in the case of a BST.
+- Applications:
+  - Searching for a specific value in a BST.
+  - Printing the nodes in sorted order.
+  - Checking whether a binary tree is a valid BST by verifying that the nodes are visited in the correct order.
+
+2. **Pre-Order Traversal (Root-Left-Right)**:
+
+- Purpose: Pre-order traversal is useful for operations that require visiting the root node before its children. It's often used to create a copy of a tree or for generating a prefix expression from an expression tree.
+- Applications:
+  - Creating a copy of a tree.
+  - Expression evaluation when using expression trees.
+  - Serialization and deserialization of a tree.
+
+3. **Post-Order Traversal (Left-Right-Root)**:
+
+- Purpose: Post-order traversal is used for operations where you need to visit the children of a node before visiting the node itself. It's often used for tasks that involve deleting nodes or freeing memory.
+- Applications:
+  - Deleting nodes in a binary tree or a BST while maintaining its structure.
+  - Calculating the height of a binary tree.
+  - Memory cleanup and freeing resources in a tree data structure.
+
+These traversal orders are essential for a wide range of tree-related tasks, and each order has a specific use case that makes it more suitable for certain operations. By using the appropriate traversal order, you can efficiently perform the tasks you eed to accomplish while navigating the tree in a systematic manner.
