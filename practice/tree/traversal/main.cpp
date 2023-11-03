@@ -8,6 +8,24 @@ public:
     TreeNode *left, *right;
     TreeNode(int val) : data(val), left(nullptr), right(nullptr) {}
 };
+void preOrderTraversal(TreeNode *root)
+{
+    if (!root)
+        return;
+    TreeNode *runner = root;
+    stack<TreeNode *> s;
+    s.push(runner);
+    while (!s.empty())
+    {
+        runner = s.top();
+        s.pop();
+        cout << runner->data << " ";
+        if (runner->right)
+            s.push(runner->right);
+        if (runner->left)
+            s.push(runner->left);
+    }
+}
 void inOrderTraversal(TreeNode *root)
 {
     if (!root)
@@ -27,6 +45,11 @@ void inOrderTraversal(TreeNode *root)
         runner = runner->right;
     }
 }
+void postOrderTraversal(TreeNode *root)
+{
+    if (!root)
+        return;
+}
 int main()
 {
     TreeNode *t = new TreeNode(10);
@@ -36,6 +59,16 @@ int main()
     t->right = new TreeNode(60);
     t->right->left = new TreeNode(33);
     t->right->right = new TreeNode(89);
+    preOrderTraversal(t);
+    cout << endl;
     inOrderTraversal(t);
+    cout << endl;
+    // postOrderTraversal(t);
     return 0;
 }
+
+// Preorder Traversal (Root, Left, Right): 10, 20, 50, 23, 60, 33, 89
+
+// Inorder Traversal (Left, Root, Right): 50, 20, 23, 10, 33, 60, 89
+
+// Postorder Traversal (Left, Right, Root): 50, 23, 20, 33, 89, 60, 10
