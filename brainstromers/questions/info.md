@@ -396,3 +396,51 @@ In computer science and data structures, the purpose of having in-order, pre-ord
   - Memory cleanup and freeing resources in a tree data structure.
 
 These traversal orders are essential for a wide range of tree-related tasks, and each order has a specific use case that makes it more suitable for certain operations. By using the appropriate traversal order, you can efficiently perform the tasks you eed to accomplish while navigating the tree in a systematic manner.
+
+### Does nested loops always result in O(n^2) complexity. Explain with examples.
+
+Nested loops do not always result in O(n^2) complexity; the actual time complexity depends on the number of iterations and the relationship between the loop indices. The "O(n^2)" complexity typically refers to situations where you have two nested loops iterating over the same input of size 'n', resulting in n\*n = n^2 iteations. However, the actual complexity can vary based on factors like loop indices and step sizes.
+
+Here are some examples to illustrate different scenarios:
+
+1. Constant-Time Nested Loop (O(1)):
+
+```python
+for i in range(10):
+    for j in range(10):
+        print(i, j)
+```
+
+In this case, the nested loops have constant bounds (10 in this example), so the number of iterations is fixed, resulting in O(1) complexity. It's not O(n^2).
+
+2. Linear-Nested Loops (O(n)):
+
+```python
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+```
+
+In this case, the number of iterations is n\*n, which is O(n^2) in terms of input size n.
+
+3. Nested Loops with Different Indicies (O(m\*n)):
+
+```python
+for i in range(m):
+    for j in range(n):
+        print(i, j)
+```
+
+If the nested loops have different bounds 'm' and 'n', the complexity in O(m\*n), not O(n^2).
+
+4. Incremental Step Nested Loops (O(n^2/4)):
+
+```python
+for i in range(1, n, 2):
+    for j in range(1, n, 2):
+        print(i, j)
+```
+
+If the nested loops use incrementing steps (in this case, skipping even numbers), the number of iterations is reduced. In this example, it would be roughly n^2/4 iterations.
+
+In summary, the time complexity of nested loops is not always O(n^2). It depends on the specific conditions of the loops, such as their bounds, step sizes, and the relationship between the loop indices. The "O(n^2)" complexity is a common scenario but not the only possibility.
