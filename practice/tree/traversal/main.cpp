@@ -49,6 +49,25 @@ void postOrderTraversal(TreeNode *root)
 {
     if (!root)
         return;
+    TreeNode *runner = root;
+    stack<TreeNode *> s1, s2;
+    s1.push(runner);
+    while (!s1.empty())
+    {
+        runner = s1.top();
+        s1.pop();
+        s2.push(runner);
+        if (runner->left)
+            s1.push(runner->left);
+        if (runner->right)
+            s1.push(runner->right);
+    }
+    while (!s2.empty())
+    {
+        runner = s2.top();
+        s2.pop();
+        cout << runner->data << " ";
+    }
 }
 int main()
 {
@@ -63,7 +82,7 @@ int main()
     cout << endl;
     inOrderTraversal(t);
     cout << endl;
-    // postOrderTraversal(t);
+    postOrderTraversal(t);
     return 0;
 }
 
