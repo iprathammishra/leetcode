@@ -103,6 +103,18 @@ public:
         }
         else
         {
+            TreeNode *successor = runner->right;
+            while (!successor->left)
+            {
+                parent = successor;
+                successor = successor->left;
+            }
+            runner->data = successor->data;
+            if (parent->left == successor)
+                parent->left = successor->right;
+            else
+                parent->right = successor->right;
+            delete successor;
         }
     }
     void preOrderTraversal()
