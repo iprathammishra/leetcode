@@ -444,3 +444,167 @@ for i in range(1, n, 2):
 If the nested loops use incrementing steps (in this case, skipping even numbers), the number of iterations is reduced. In this example, it would be roughly n^2/4 iterations.
 
 In summary, the time complexity of nested loops is not always O(n^2). It depends on the specific conditions of the loops, such as their bounds, step sizes, and the relationship between the loop indices. The "O(n^2)" complexity is a common scenario but not the only possibility.
+
+### What is Morris Travesal? Why is it recommended?
+
+Morris Traversal is a clever and efficient technique for traversing binary trees, which includes all three classic tree traversal types: preorder, inorder, and postorder. It's recommended because it allows you to perform tree traversals without using extra space (like a stack or recursion) other than the implicit call stack used by the CPU.
+
+The key idea behind Morris Traversal is to establish a link from the current node being visited to its in-order predecessor, and then use this link to backtrack when needed, thus eliminating the need for an explicit stack. This saves space and makes the traversal process more memory-efficient.
+
+Here's a brief explanation of how Morris Traversal works for each of three traversal types:
+
+1. Inorder Morris Traversal:
+
+- Initialize the current node as the root of the tree.
+- While the current node is not null:
+  - If the current node has no left child, visit the node, and move it to the right child.
+  - If the current node has a left child:
+    - Find the in-order predecessor of the current node (the rightmost node in the its left subtree).
+    - Make the in-order predecessor point to the current node (creating a temporary link).
+    - Move to the left child of the current node.
+    - When you reach a node with a null left child, it's time to visit the current node, break the temporary link, and move to the right child.
+  - Repeat this process until you've traversed all nodes.
+
+2. Preorder Morris Traversal:
+
+   - Initialize the current node as the root of the tree.
+   - While the current node is not null.
+     - If the current node has no left child, visit the node, and move to the right child.
+     - If the current node has a left child:
+       - Find the in-order predecessor of the current node.
+       - If the right child of the in-order predecessor is null, create a link from the in-order predecessor to the current node, visit the current node, and move to its left child.
+       - If the right child of the in-order predecessor points to the current node (indicating that we have already visited the left subtree), break the link, and move to the right child.
+
+3. Postorder Morris Traversal:
+   - The idea is somewhat similar to the in-order traversal with slight modifications.
+   - You visit nodes in reverse order compared to in-order traversal. This means you first visit the right subtree before the left subtree and the root.
+   - You reverse the right child links when visiting nodes to allow for the reversed postorder traversal.
+
+The Morris Traversal technique is recommended in interviews because it's an elegant way to traverse trees with O(1) space complexity, which is a common interview challenge. However, it may require more effort to understand and implement compared to traditional recursive or stack-based methods. Therefore, it's essential to practice and understand the underlying logic thoroughly to use it effectively in an interview setting.
+
+```cpp
+#include <iostream>
+
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+void inorderMorrisTraversal(TreeNode* root) {
+    TreeNode* current = root;
+    while (current) {
+        if (current->left == nullptr) {
+            std::cout << current->val << " ";
+            current = current->right;
+        } else {
+            TreeNode* predecessor = current->left;
+            while (predecessor->right && predecessor->right != current) {
+                predecessor = predecessor->right;
+            }
+            if (predecessor->right == nullptr) {
+                predecessor->right = current;
+                current = current->left;
+            } else {
+                predecessor->right = nullptr;
+                std::cout << current->val << " ";
+                current = current->right;
+            }
+        }
+    }
+}
+
+void preorderMorrisTraversal(TreeNode* root) {
+    TreeNode* current = root;
+    while (current) {
+        if (current->left == nullptr) {
+            std::cout << current->val << " ";
+            current = current->right;
+        } else {
+            TreeNode* predecessor = current->left;
+            while (predecessor->right && predecessor->right != current) {
+                predecessor = predecessor->right;
+            }
+            if (predecessor->right == nullptr) {
+                std::cout << current->val << " ";
+                predecessor->right = current;
+                current = current->left;
+            } else {
+                predecessor->right = nullptr;
+                current = current->right;
+            }
+        }
+    }
+}
+
+void reverseNodes(TreeNode* from, TreeNode* to) {
+    if (from == to) return;
+    TreeNode* x = from;
+    TreeNode* y = from->right;
+    TreeNode* z;
+    while (x != to) {
+        z = y->right;
+        y->right = x;
+        x = y;
+        y = z;
+    }
+}
+
+void printReverse(TreeNode* from, TreeNode* to) {
+    reverseNodes(from, to);
+    TreeNode* p = to;
+    while (true) {
+        std::cout << p->val << " ";
+        if (p == from) break;
+        p = p->right;
+    }
+    reverseNodes(to, from);
+}
+
+void postorderMorrisTraversal(TreeNode* root) {
+    TreeNode dummy(0);
+    dummy.left = root;
+    TreeNode* current = &dummy;
+    while (current) {
+        if (current->left == nullptr) {
+            current = current->right;
+        } else {
+            TreeNode* predecessor = current->left;
+            while (predecessor->right && predecessor->right != current) {
+                predecessor = predecessor->right;
+            }
+            if (predecessor->right == nullptr) {
+                predecessor->right = current;
+                current = current->left;
+            } else {
+                printReverse(current->left, predecessor);
+                predecessor->right = nullptr;
+                current = current->right;
+            }
+        }
+    }
+}
+
+int main() {
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+
+    std::cout << "Inorder traversal: ";
+    inorderMorrisTraversal(root);
+    std::cout << std::endl;
+
+    std::cout << "Preorder traversal: ";
+    preorderMorrisTraversal(root);
+    std::cout << std::endl;
+
+    std::cout << "Postorder traversal: ";
+    postorderMorrisTraversal(root);
+    std::cout << std::endl;
+
+    return 0;
+}
+```
