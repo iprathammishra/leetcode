@@ -46,24 +46,17 @@ public:
             }
         }
     }
-    void searchTreeNode(int value)
+    bool searchTreeNode(int value)
     {
         if (!root)
-            return;
+            return false;
         TreeNode *runner = root;
-        while (runner)
-        {
-            if (value == runner->data)
-            {
-                cout << "Founded!" << endl;
-                return;
-            }
-            else if (value < runner->data)
+        while (runner && runner->data != value)
+            if (value < runner->data)
                 runner = runner->left;
             else
                 runner = runner->right;
-        }
-        cout << "Not founded!" << endl;
+        return (runner) ? true : false;
     }
     void deleteTreeNode(int value)
     {
@@ -201,12 +194,12 @@ int main()
         case 2:
             cout << "Enter the value: ";
             cin >> val;
-            bst.deleteTreeNode(val);
+            (bst.searchTreeNode(val)) ? cout << "Founded!" << endl : cout << "Not Founded!" << endl;
             break;
         case 3:
             cout << "Enter the value: ";
             cin >> val;
-            bst.searchTreeNode(val);
+            bst.deleteTreeNode(val);
             break;
         case 4:
             cout << "\nPreOrderTraversal: ";
@@ -224,7 +217,7 @@ int main()
             cout << endl;
             break;
         default:
-            cout << "Invalid response.\n";
+            cout << "\nInvalid Response!\n";
             break;
         }
     }
