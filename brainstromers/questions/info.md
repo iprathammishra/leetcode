@@ -608,3 +608,32 @@ int main() {
     return 0;
 }
 ```
+
+### How is `a = a + 1` taking place?
+
+In C++, the expression `a = a + 1` is a common operation that is often used to increament the value of a variable `a` by 1. It might seem a bit conterintuitive at first, but it's a fundamental concept in programming and is quite straightforward.
+
+Let's break down how this operation works:
+
+1. **Variable Declaration:** First, you must have declared and defined the variable `a` somewhere in your code. For example:
+
+```cpp
+int a = 5; // Here, `a` is declared and initialized with the value 5.
+```
+
+2. [Most Important] **Assignment:** In C++, the `=` symbol is used for assignment. It takes the value on the right and assigns it to the variable on the left. So, `a = a + 1` is essentially saying "Take the current value of `a` , add 1 to it, and then store that new back into `a`."
+
+3. **Evaluation:** The expression on the right side of `=` is `a + 1`. It takes the current value of `a` (which is 5 in our example) and adds 1 to it. So, `5 + 1` evaluates to 6.
+
+4. **Assignment:** The result of the evaluation, which is 6, is then assigned back to `a`. This means that after the statement `a = a + 1` is executed, the new value of `a` is 6.
+
+Here's, the step-by-step breakdown:
+
+- `a` is initially set to 5.
+- `a + 1` is evaluated, resulting in 6.
+- The result, 6, is assigned back to `a`.
+- Now, `a` is updated to 6.
+
+This is a fundamental concept in programming and is often used for various purposes, including increamenting or modifying variables as your program runs. It's important to understand that variables in most programming languages, including C++, can change their values over time, and this is one way to achieve that. This kind of operation is so common that C++ provides a shorthand notation for it: `a += 1`, which is equivalent to `a = a + 1`.
+
+### In this statement `string a = "";`, what is exactly stored in `a`? Is `empty` same as `NULL` or `nullptr`?
