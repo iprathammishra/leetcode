@@ -484,7 +484,7 @@ The Morris Traversal technique is recommended in interviews because it's an eleg
 
 ```cpp
 #include <iostream>
-
+using namespace std;
 struct TreeNode {
     int val;
     TreeNode* left;
@@ -496,7 +496,7 @@ void inorderMorrisTraversal(TreeNode* root) {
     TreeNode* current = root;
     while (current) {
         if (current->left == nullptr) {
-            std::cout << current->val << " ";
+            cout << current->val << " ";
             current = current->right;
         } else {
             TreeNode* predecessor = current->left;
@@ -508,7 +508,7 @@ void inorderMorrisTraversal(TreeNode* root) {
                 current = current->left;
             } else {
                 predecessor->right = nullptr;
-                std::cout << current->val << " ";
+                cout << current->val << " ";
                 current = current->right;
             }
         }
