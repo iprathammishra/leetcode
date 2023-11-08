@@ -519,7 +519,7 @@ void preorderMorrisTraversal(TreeNode* root) {
     TreeNode* current = root;
     while (current) {
         if (current->left == nullptr) {
-            std::cout << current->val << " ";
+            cout << current->val << " ";
             current = current->right;
         } else {
             TreeNode* predecessor = current->left;
@@ -527,7 +527,7 @@ void preorderMorrisTraversal(TreeNode* root) {
                 predecessor = predecessor->right;
             }
             if (predecessor->right == nullptr) {
-                std::cout << current->val << " ";
+                cout << current->val << " ";
                 predecessor->right = current;
                 current = current->left;
             } else {
