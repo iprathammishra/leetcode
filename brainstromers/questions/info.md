@@ -555,7 +555,7 @@ void printReverse(TreeNode* from, TreeNode* to) {
     reverseNodes(from, to);
     TreeNode* p = to;
     while (true) {
-        std::cout << p->val << " ";
+        cout << p->val << " ";
         if (p == from) break;
         p = p->right;
     }
