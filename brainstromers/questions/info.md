@@ -571,9 +571,8 @@ void postorderMorrisTraversal(TreeNode* root) {
             current = current->right;
         } else {
             TreeNode* predecessor = current->left;
-            while (predecessor->right && predecessor->right != current) {
+            while (predecessor->right && predecessor->right != current)
                 predecessor = predecessor->right;
-            }
             if (predecessor->right == nullptr) {
                 predecessor->right = current;
                 current = current->left;
