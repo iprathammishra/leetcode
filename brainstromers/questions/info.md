@@ -592,17 +592,17 @@ int main() {
     root->left->left = new TreeNode(4);
     root->left->right = new TreeNode(5);
 
-    std::cout << "Inorder traversal: ";
+    cout << "Inorder traversal: ";
     inorderMorrisTraversal(root);
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Preorder traversal: ";
+    cout << "Preorder traversal: ";
     preorderMorrisTraversal(root);
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Postorder traversal: ";
+    cout << "Postorder traversal: ";
     postorderMorrisTraversal(root);
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
