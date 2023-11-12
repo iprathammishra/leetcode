@@ -25,7 +25,6 @@ public:
         }
         TreeNode *runner = root;
         while (true)
-        {
             if (value < runner->data)
             {
                 if (!runner->left)
@@ -44,7 +43,6 @@ public:
                 }
                 runner = runner->right;
             }
-        }
     }
     bool searchTreeNode(int value)
     {
@@ -56,7 +54,7 @@ public:
                 runner = runner->left;
             else
                 runner = runner->right;
-        return (runner) ? true : false;
+        return (!runner) ? false : true;
     }
     void deleteTreeNode(int value)
     {
@@ -97,7 +95,7 @@ public:
         else
         {
             TreeNode *successor = runner->right;
-            while (!successor->left)
+            while (successor->left)
             {
                 parent = successor;
                 successor = successor->left;
@@ -194,30 +192,31 @@ int main()
         case 2:
             cout << "Enter the value: ";
             cin >> val;
-            (bst.searchTreeNode(val)) ? cout << "Founded!" << endl : cout << "Not Founded!" << endl;
+            bst.deleteTreeNode(val);
             break;
         case 3:
             cout << "Enter the value: ";
             cin >> val;
-            bst.deleteTreeNode(val);
+            (bst.searchTreeNode(val)) ? cout << "Found." : cout << "Not Found.";
             break;
         case 4:
-            cout << "\nPreOrderTraversal: ";
+            cout << "PreOrder: ";
             bst.preOrderTraversal();
             cout << endl;
             break;
         case 5:
-            cout << "\nInOrderTraversal: ";
+            cout << "InOrder: ";
             bst.inOrderTraversal();
             cout << endl;
             break;
         case 6:
-            cout << "\nPostOrderTraversal: ";
+            cout << "PostOrder: ";
             bst.postOrderTraversal();
             cout << endl;
             break;
         default:
-            cout << "\nInvalid Response!\n";
+            cout << "Invalid response.";
+            cout << endl;
             break;
         }
     }
