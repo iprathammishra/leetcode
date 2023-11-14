@@ -79,7 +79,7 @@ public:
         if (!root)
             return false;
         TreeNode *runner = root;
-        while (runner && runner->data == value)
+        while (runner && runner->data != value)
             if (value < runner->data)
                 runner = runner->left;
             else
@@ -92,7 +92,7 @@ public:
             return;
         TreeNode *runner = root;
         TreeNode *parent = nullptr;
-        while (runner && runner->data == value)
+        while (runner && runner->data != value)
         {
             parent = runner;
             if (value < runner->data)
@@ -218,9 +218,67 @@ public:
                 }
             }
     }
-    void preOrderIterativeTraversal() {}
-    void inOrderIterativeTraversal() {}
-    void postOrderIterativeTraversal() {}
+    void preOrderIterativeTraversal()
+    {
+        if (!root)
+            return;
+        TreeNode *runner = root;
+        stack<TreeNode *> s;
+        s.push(runner);
+        while (!s.empty())
+        {
+            runner = s.top();
+            s.pop();
+            cout << runner->data << " ";
+            if (runner->right)
+                s.push(runner->right);
+            else
+                s.push(runner->left);
+        }
+    }
+    void inOrderIterativeTraversal()
+    {
+        if (!root)
+            return;
+        TreeNode *runner = root;
+        stack<TreeNode *> s;
+        while (runner || !s.empty())
+        {
+            while (runner)
+            {
+                s.push(runner);
+                runner = runner->left;
+            }
+            runner = s.top();
+            s.pop();
+            cout << runner->data << " ";
+            runner = runner->right;
+        }
+    }
+    void postOrderIterativeTraversal()
+    {
+        if (!root)
+            return;
+        TreeNode *runner = root;
+        stack<TreeNode *> s1, s2;
+        s1.push(runner);
+        while (!s1.empty())
+        {
+            runner = s1.top();
+            s1.pop();
+            s2.push(runner);
+            if (runner->left)
+                s1.push(runner->left);
+            else
+                s2.push(runner->right);
+        }
+        while (!s2.empty())
+        {
+            runner = s2.top();
+            s2.pop();
+            cout << runner->data << " ";
+        }
+    }
 };
 int main()
 {
@@ -249,7 +307,7 @@ int main()
         case 3:
             cout << "Enter the value you want to search: ";
             cin >> val;
-            bst.searchTreeNode(val);
+            (bst.searchTreeNode(val)) ? cout << "Founded.\n" : cout << "Not Founded.\n";
             break;
         case 4:
             cout << "PreOrderMorris: \n";
