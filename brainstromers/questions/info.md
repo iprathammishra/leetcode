@@ -654,3 +654,5 @@ An empty string, `NULL`, and `nullptr` are not same things; they have different 
 3. **nullptr:** `nullptr` is a C++11 feature that represents a null pointer in a type-safe manner. It's used to indicate that a pointer doesn't point to any object. Using `nullptr` is preferred over `NULL` in modern C++ code because it avoids many common pointer-related issues.
 
 To summarize, an empty string is a valid string with no characters, while `NULL` and `nullptr` are used to represent null or invalid pointers. They have different purposes and should not to be confused with each other.
+
+### Explain the concept of Backtracking using C++.
