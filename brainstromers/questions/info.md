@@ -795,3 +795,224 @@ if (!runner->left)
     runner = runner->right;
 }
 ```
+
+If the current node has no left child, print its data and move to the right child. This is similar to the normal in-order traversal for the left subtree.
+
+3. **Establish Thread Connection:**
+
+```
+else
+{
+    TreeNode *predecessor = runner->left;
+    while (predecessor->right && predecessor->right != runner)
+        predecessor = predecessor->right;
+    if (!predecessor->right)
+    {
+        predecessor->right = runner;
+        runner = runner->left;
+    }
+}
+```
+
+If the current node has a left child, find its in-order predecessor (the rightmost node in the left subtree). If the predecessor's right child is not set, establish a temporary link from the predecessor's right to the current node (`runner`), and move to the left child.
+
+4. **Follow Thread or Print Node:**
+
+```cpp
+else
+{
+    predecessor->right = nullptr;
+    cout << runner->data << " ";
+    runner = runner->right;
+}
+```
+
+If the predecessor's right child is already set (meaning we are backtracking after visiting the left subtree), reset the link to `nullptr`, print the current node's data, and move to the right child.
+
+5. **Repeat:**
+
+Continue these steps until `runner` becomes `nullptr`, indicating that the entire tree has been traversed.
+
+In summary, the Morris Traversal algorithm utilized threading to link nodes temporarily, eliminating the need for recursion for an explicit stack. This reduces space complexity to O(1) while maintaining the in-order traversal order.
+
+### `preOrderMorrisTraversal()`, explained!
+
+The `preOrderMorrisTraversal()` function implements Morris Traversal for pre-order traversal of a binary tree. Let's break down the code step by step:
+
+1. **Initialization:**
+
+```cpp
+TreeNode *runner = root;
+```
+
+Start with a `runner` pointer initialized to the root of the tree.
+
+2. **Traverse Left:**
+
+```cpp
+if (!runner->left)
+{
+    cout << runner->data << " ";
+    runner = runner->right;
+}
+```
+
+If the current node has no left child, print its data and move to the right child. This is similar to the normal pre-rder traversal for the left subtree.
+
+3. **Establish Thread Connection:**
+
+```cpp
+else
+{
+    TreeNode *predecessor = runner->left;
+    while (predecessor->right && predecessor->right != runner)
+        predecessor = predecessor->right;
+    if (!predecessor->right)
+    {
+        cout << runner->data << " ";
+        predecessor->right = runner;
+        runner = runner->left;
+    }
+}
+```
+
+If the current node has a left child, find its in-order predecessor (the rightmost node in the left subtree). If the predecessor's right child is not set, print the current node's data, establish a temporary link from the predecessor's right to the current node (`runner`), move to the left child.
+
+4. **Follow Thread or Move Right:**
+
+```cpp
+else
+{
+    predecessor->right = nullptr;
+    runner = runner->right;
+}
+```
+
+If the predecessor's right child is already set (meaning we are backtracking after visiting the left subtree), reset the link to `nullptr` and move to the right child.
+
+5. **Repeat:**
+
+Continue these steps until the `runner` becomes `nullptr`, indicating that the entire tree has been traversed.
+
+In summary, the Morris Traversal algorithm for pre-order traversal similarly uses threading to link nodes temporarily, eliminatinh the need for recursion or an explicit stack. The process involves printing the node's data before moving to the left child and adjusting the threading accordingly.
+
+### `postOrderMorrisTraversal()`, explained!
+
+The `postOrderMorrisTraversal()` function implements Morris Traversal for post-order traversal of a binary tree. This algorithm uses threading and a helper function `printReverse` to achieve the post-order traversal. Let's break down the code step by step:
+
+1. **Initialization:**
+
+```cpp
+TreeNode dummy(0);
+dummy.left = root;
+TreeNode *runner = &dummy;
+```
+
+Start with a dummy node as the left child of the root, and set the `runner` pointer to the dummy node.
+
+2. **Traverse Left:**
+
+```cpp
+if (!runner->left)
+    runner = runner->right;
+```
+
+If the current node has no left child, move to the right child.
+
+3. **Establish Thread Connection:**
+
+```cpp
+else
+{
+    TreeNode *predecessor = runner->left;
+    while (predecessor->right && predecessor->right != runner)
+        predecessor = predecessor->right;
+    if (!predecessor->right)
+    {
+        predecessor->right = runner;
+        runner = runner->left;
+    }
+}
+```
+
+If the current node has a left child, find its in-order predecessor (the rightmost node in the left subtree). If the predecessor's right child is not set, establish a temporary link from the predecessor's right to the current node (`runner`), and move to the left child.
+
+4. **Print Reverse Order or Move Right:**
+
+```cpp
+else
+{
+    printReverse(runner->left, predecessor);
+    predecessor->right = nullptr;
+    runner = runner->right;
+}
+```
+
+If the predecessor's right child is already set (meaning we are backtracking after visiting the left subtree), use the `printReverse` function to print the nodes in reverse order within the left subtree. Then reset the link to `nullptr` and move to the right child.
+
+5. **Reverse Nodes Function (`reverseNodes`):**
+
+```cpp
+void reverseNodes(TreeNode *from, TreeNode *to)
+{
+    if (from == to)
+        return;
+    TreeNode *x = from;
+    TreeNode *y = from->right;
+    TreeNode *z;
+    while (x != to)
+    {
+        z = y->right;
+        y->right = x;
+        x = y;
+        y = z;
+    }
+}
+```
+
+Explanation:
+
+- **Purpose:** This function is designed to reverse the links between nodes from the `from` node to the `to` node. It's used in the context of Morris Traversal for post-order traversal to create temporary reverse links that facilitate printing in reverse order.
+- **Condition:** If `from` is already equal to `to`, indicating a single-node segment, the function returns immediately since there's no need to reverse anything.
+- **Variables:**
+  - `x`: Represents the current node in the reversal process.
+  - `y`: Represents the next node in the reversal process.
+  - `z`: Temporary variable to store the right child `y`.
+- **Reversal Process:**
+  - The function uses a while loop to iterate through the nodes `from` to `to`.
+  - In each iteration, it updates the right child of `y` to point to `x`, effectively reversing the link between `x` and `y`.
+  - The `x` and `y` pointers are then updated for the next iteration.
+
+6. **Print Reverse Function (`printReverse`):**
+
+```cpp
+void printReverse(TreeNode *from, TreeNode *to)
+{
+    reverseNodes(from, to);
+    TreeNode *p = to;
+    while (true)
+    {
+        cout << p->data << " ";
+        if (p == from)
+            break;
+        p = p->right;
+    }
+    reverseNodes(to, from);
+}
+```
+
+Explanation:
+
+- **Purpose:** This function is responsible for printing the nodes in reverse order from the `to` node to the `from` node, using the `reverseNodes` function to temporarily reverse the links.
+- **Reversal Before Printing:**
+  - It first calls the `reverseNodes` function to reverse the links between nodes from `from` to `to`.
+  - This temporary reversal allows for easy printing in reverse order.
+- **Reversal in Reverse Order:**
+  - It then initialized a pointer `p` to the `to` node.
+  - It uses a while loop to print the data of each node starting from `to` and moving to the right until it reaches the `from` node.
+  - The loop breaks when `p` becomes equal to `from`.
+- **Reversal after Printing:** After printing, it calls `reverseNodes` again to revert the links to their original order.
+
+_Note:_ The purpose of reversing the links is to temporarily change the structure of the tree for printing in reverse order without modifying the actual tree structure premanently. It's a clever technique used in Morris Traversal for post-order traversal.
+
+In summary, the Morris Traversal algorithm for post-order traversal uses threading and a combination of reversing nodes and printing in reverse order to achieve the desired traversal sequence.
