@@ -773,3 +773,25 @@ When you run this program, it will output all possible subsets of the set `{1, 2
 ```
 
 This example illustrate the essence of backtracking in a simpler context-building solutions incrementally, exploring possibilities, and backtracking when needed.
+
+### `inOrderMorrisTraversal()`, explained!
+
+Morris Traversal is a way to traverse a binary tree without using recursion and without using an explicit stack. It is an in-order tree traversal algorithm. Let's break down the code step by step:
+
+1. **Initialization:**
+
+```cpp
+TreeNode *runner = root;
+```
+
+Start with a `runner` pointer initialized to the root of the tree.
+
+2. **Traverse Left:**
+
+```cpp
+if (!runner->left)
+{
+    cout << runner->data << " ";
+    runner = runner->right;
+}
+```
