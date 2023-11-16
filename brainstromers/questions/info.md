@@ -970,7 +970,7 @@ void reverseNodes(TreeNode *from, TreeNode *to)
 }
 ```
 
-Explanation:
+Explaination:
 
 - **Purpose:** This function is designed to reverse the links between nodes from the `from` node to the `to` node. It's used in the context of Morris Traversal for post-order traversal to create temporary reverse links that facilitate printing in reverse order.
 - **Condition:** If `from` is already equal to `to`, indicating a single-node segment, the function returns immediately since there's no need to reverse anything.
@@ -1001,7 +1001,7 @@ void printReverse(TreeNode *from, TreeNode *to)
 }
 ```
 
-Explanation:
+Explaination:
 
 - **Purpose:** This function is responsible for printing the nodes in reverse order from the `to` node to the `from` node, using the `reverseNodes` function to temporarily reverse the links.
 - **Reversal Before Printing:**
