@@ -656,3 +656,120 @@ An empty string, `NULL`, and `nullptr` are not same things; they have different 
 To summarize, an empty string is a valid string with no characters, while `NULL` and `nullptr` are used to represent null or invalid pointers. They have different purposes and should not to be confused with each other.
 
 ### Explain the concept of Backtracking using C++.
+
+Backtracking is a general algorithm for finiding all (or some) solutions to computational problems that increamentally builds candidates for solutions and abandons a candidate as soon as it determines that the candidate cannot possibly be completed to a valid solution. It is often used to solve optimization problems, decision problems, or problems that can be broken down into a sequence of decisions.
+
+Let's go through the basic concept of backtracking using C++:
+
+Key components of Backtracking:
+
+1. **Decision Space:**
+
+- The problem is framed in terms of decisions that need to be made to reacj a solution.
+- A set of possible choices is defined for each decision point.
+
+2. **Constraints:**
+
+- Constraints are rules that must be satisfied for a set of decisions to be valid solution.
+- They help prune the search space by eliminating choices that violate the rules.
+
+3. **Objective Function:**
+
+- The objective function defines the goal or criteria for a valid solution.
+- It is used to determine if a particular combination of decisions form a solution.
+
+Backtracking Algorithm Outline:
+
+The basic structure of a backtracking algorithm involves making a series of decisions and then undoing those decisions if they don't lead to a valid solution. The algorithm explores the decision space in a depth-first manner, backtracking when necessary.
+
+```cpp
+void backtrack(Parameters) {
+    if (isSolution(Parameters)) {
+        // Process the solution
+        // (Print, store, or perform other actions)
+    } else {
+        // Iterate over all possible choices for the next decision
+        for (each choice) {
+            if (isValid(Parameters, choice)) {
+                // Make the choice
+                applyChoice(Parameters, choice);
+
+                // Recursively explore further
+                backtrack(Updated Parameters);
+
+                // Undo the choice (backtrack)
+                undoChoice(Parameters, choice);
+            }
+        }
+    }
+}
+```
+
+Example - **Generating All Subsets:**
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void generateSubsets(const vector<int> &nums, vector<int> &current, int index)
+{
+    // Base case: process the curent subset
+    cout << "{";
+    for (int i : current)
+        cout << i << " ";
+    cout << "}\n";
+
+    // Explore further by including or excluding the next element in the subset
+    for (int i = index; i < nums.size(); ++i)
+    {
+        // Include the current element in the subset
+        current.push_back(nums[i]);
+
+        // Recursively generate subsets starting from the next index
+        generateSubsets(nums, current, i+1);
+
+        // Exclude the current element (backtrack)
+        current.pop_back();
+    }
+}
+
+int main()
+{
+    vector<int> nums = {1, 2, 3};
+    vector<int> current;
+
+    generateSubsets(nums, current, 0);
+
+    return 0;
+}
+```
+
+In this example, the goal is to generate all possible subsets of the set `{1, 2, 3}`. The `generateSubsets` function uses backtracking to explore the decision space of including or excluding each element in the subset.
+
+Here's a breakdown of the code:
+
+- The `generateSubsets` function takes the original set `nums`, the current subset being formed (`current`), and the index of the element being considered.
+- The base case prints the current subset.
+- The function then iterates over the remaining elements starting from the given index and recursively explores two possibilities:
+
+1. Include the current element in the subset.
+2. Exclude the current element from the subset.
+
+- The recursive calls explore all possible combinations of including and excluding elements, and the backtracking step (`current.pop_back()`) ensures that the function returns to the previous state before making the next decision.
+
+When you run this program, it will output all possible subsets of the set `{1, 2, 3}`:
+
+```txt
+{}
+{1 }
+{1 2 }
+{1 2 3 }
+{1 3 }
+{2 }
+{2 3 }
+{3 }
+```
+
+This example illustrate the essence of backtracking in a simpler context-building solutions incrementally, exploring possibilities, and backtracking when needed.
