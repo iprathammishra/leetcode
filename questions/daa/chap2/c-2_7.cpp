@@ -123,36 +123,9 @@ public:
             runner = runner->right;
         }
     }
-    TreeNode *inOrderNext(TreeNode *v)
-    {
-        if (!root)
-            return nullptr;
-        TreeNode *runner = root;
-        std::vector<TreeNode *> vectorTN;
-        std::stack<TreeNode *> s;
-        while (runner || !s.empty())
-        {
-            while (runner)
-            {
-                s.push(runner);
-                runner = runner->left;
-            }
-            runner = s.top();
-            s.pop();
-            vectorTN.push_back(runner);
-            runner = runner->right;
-        }
-        for (int i = 0; i < vectorTN.size(); i++)
-            if (vectorTN[i] == v)
-            {
-                std::cout << "equal";
-                if (i + 1 < vectorTN.size())
-                    return vectorTN[i + 1];
-                else
-                    return nullptr;
-            }
-        return nullptr;
-    }
+    TreeNode *inOrderNext(TreeNode *v) {}
+    TreeNode *preOrderNext(TreeNode *v) {}
+    TreeNode *postOrderNext(TreeNode *v) {}
 };
 int main()
 {
