@@ -95,6 +95,7 @@ public:
         else
         {
             TreeNode *successor = runner->right;
+            parent = runner;
             while (successor->left)
             {
                 parent = successor;
