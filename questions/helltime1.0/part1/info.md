@@ -57,7 +57,7 @@ How do you identify when to use the Merge Intervals pattern?
 Problems:
 
 - Intervals Intersection (medium)
-- Maximum COU Load (hard)
+- Maximum CPU Load (hard)
 
 ### Cyclic Sort
 
