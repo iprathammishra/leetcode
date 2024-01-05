@@ -13,7 +13,7 @@
 - 242: Valid Anagram
 - 371: Sum of Two Integers
 - 88: Merge Sorted Array
-- 108: Covert Sorted Array to Binary Search Tree
+- 108: Convert Sorted Array to Binary Search Tree
 - 189: Rotate Array
 - 205: Isomorphic Strings
 - 226: Invert Binary Tree
