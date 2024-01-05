@@ -1,0 +1,76 @@
+# How to Effectively use LeetCode for Interview Questions
+
+### Must-do Easy Questions
+
+- 13: Roman to Integer
+- 20: Valid Parentheses
+- 21: Merge Two Sorted Lists
+- 141: Linked List Cycle
+- 155: Min Stack
+- 169: Majority Element
+- 202: Happy Number
+- 204: Count Primes
+- 242: Valid Anagram
+- 371: Sum of Two Integers
+- 88: Merge Sorted Array
+- 108: Convert Sorted Array to Binary Search Tree
+- 189: Rotate Array
+- 205: Isomorphic Strings
+- 226: Invert Binary Tree
+- 448: Find All Numbers Disappeared in an Array
+- 572: Subtree of Another Tree
+- 557: Reverse Words in a String III
+- 589: N-ary Tree Preorder Traversal
+- 605: Can Place Flowers
+- 617: Merge Two Binary Trees
+- 665: Non-decreasing Array
+- 669: Trim a Binary Search Tree
+- 674: Longest Continuous Increasing Subsequence
+- 703: Kth Largest Element in a Stream
+- 705: Design HashSet
+- 852: Peak Index in a Mountain Array
+- 1160: Find Words That Can Be Formed By Characters
+
+### Must-do Medium Problems
+
+- 5: Longest Palindromic Substring
+- 11: Container With Most Water
+- 17: Letter Combinations of a Phone Number
+- 22: Generate Parentheses
+- 33: Search in Rotated Sorted Array
+- 34: Find First and Last Position of Element in Sorted Array
+- 46: Permutations
+- 24: Swap Nodes in Pairs
+- 48: Rotate Image
+- 49: Group Anagrams
+- 56: Merge Intervals
+- 75: Sort Colors
+- 94: Binary Tree Inorder Traversal
+- 102: Binary Tree Level Order Traversal
+- 106: Construct Binary Tree from Inorder and Postorder Traversal
+- 117: Populating Next Right Pointers in Each Node II
+- 142: Linked List Cycle II
+- 150: Evaluate Reverse Polish Notation
+- 151: Reverse Words in a String
+- 166: Fraction to Recurring Decimal
+- 179: Largest Number
+- 200: Number of Islands
+- 207: Course Schedule
+- 208: Implement Trie (Prefix Tree)
+- 215: Kth Largest Element in an Array
+- 236: Lowest Common Ancestor of a Binary Tree
+- 300: Longest Increasing Subsequence
+- 328: Odd Even Linked List
+- 338: Counting Bits
+- 347: Top K Frequent Elements
+- 355: Design Twitter
+- 417: Pacific Altantic Water Flow
+- 421: Maximum XOR of Two Numbers in an Array
+- 424: Longest Repeating Character Replacement
+- 454: 4Sum II
+- 529: Minesweeper
+- 525: Contiguous Array
+- 658: Fins K Closest Elements
+- 763: Partition Labels
+- 767: Reorganize String
+- 1171: Remove Zero Sum Consecutive Noes from Linked List
