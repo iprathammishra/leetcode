@@ -37,7 +37,7 @@ Link: https://leetcode.com/discuss/general-discussion/662866/dp-for-beginners-pr
 ### Matrix Multiplication Variant:
 
 - Minimum Score Triangulation of Polygon
-- Minimum Cost Tree fromo Leaf Values
+- Minimum Cost Tree from Leaf Values
 - Burst Balloons
 
 ### Matrix/2D Array:
@@ -58,12 +58,12 @@ Link: https://leetcode.com/discuss/general-discussion/662866/dp-for-beginners-pr
 
 ### State Machine
 
-- Best Time to But and Sell Stock
-- Best Time to But and Sell Stock II
-- Best Time to But and Sell Stock III
-- Best Time to But and Sell Stock IV
-- Best Time to But and Sell Stock with Cooldown
-- Best Time to But and Sell Stock with Transaction Fee
+- Best Time to Buy and Sell Stock
+- Best Time to Buy and Sell Stock II
+- Best Time to Buy and Sell Stock III
+- Best Time to Buy and Sell Stock IV
+- Best Time to Buy and Sell Stock with Cooldown
+- Best Time to Buy and Sell Stock with Transaction Fee
 
 ### Depth First Search + DP:
 
