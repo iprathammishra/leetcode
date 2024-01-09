@@ -1,6 +1,6 @@
 # Interview Questions
 
-1. **Number Swapper:** Write a function to swap a number in place (that is, without temporary variables).
+<!-- 1. **Number Swapper:** Write a function to swap a number in place (that is, without temporary variables). -->
 
 2. **Word Frequencies:** Design a method to find the frequency of occurrences of any given word in abook. What if we were running this algorithm multiple times?
 
