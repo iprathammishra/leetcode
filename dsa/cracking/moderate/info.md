@@ -2,7 +2,7 @@
 
 <!-- 1. **Number Swapper:** Write a function to swap a number in place (that is, without temporary variables). -->
 
-2. **Word Frequencies:** Design a method to find the frequency of occurrences of any given word in abook. What if we were running this algorithm multiple times?
+2. **Word Frequencies:** Design a method to find the frequency of occurrences of any given word in a book. What if we were running this algorithm multiple times?
 
 3. **Intersection:** Given two straight line segements (represented as a start point and an end point), computer the point of intersection, if any.
 
