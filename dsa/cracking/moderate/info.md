@@ -10,11 +10,11 @@
 
 <!-- 5. **Factorial Zeros:** Write an algorithm which computes the number of trailing zeros in n factorial. -->
 
-6. **Smallest Difference:** Given two arrays of integers, computer the pair of values (one value in each array) with the smallest (non-negative) difference. Return the difference.
+<!-- 6. **Smallest Difference:** Given two arrays of integers, computer the pair of values (one value in each array) with the smallest (non-negative) difference. Return the difference.
 
 Example:<br>
 Input: {1, 3, 15, 11, 2}, {23, 127, 235, 19, 8}<br>
-Output: That is the pair {11, 8}.
+Output: That is the pair {11, 8}. -->
 
 7. **Number Max:** Write a method that finds the maximum of two numbers. You should not use if-else or any other comparison operator.
 
