@@ -4,7 +4,7 @@
 
 <!-- 2. **Word Frequencies:** Design a method to find the frequency of occurrences of any given word in a book. What if we were running this algorithm multiple times? -->
 
-3. **Intersection:** Given two straight line segements (represented as a start point and an end point), computer the point of intersection, if any.
+<!-- 3. **Intersection:** Given two straight line segements (represented as a start point and an end point), computer the point of intersection, if any. -->
 
 4. **Tic Tac Win:** Design an algorithm to figure out if someone has won a game of tic-tac-toe.
 
