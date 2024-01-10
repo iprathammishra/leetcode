@@ -16,7 +16,7 @@ Example:<br>
 Input: {1, 3, 15, 11, 2}, {23, 127, 235, 19, 8}<br>
 Output: That is the pair {11, 8}. -->
 
-7. **Number Max:** Write a method that finds the maximum of two numbers. You should not use if-else or any other comparison operator.
+<!-- 7. **Number Max:** Write a method that finds the maximum of two numbers. You should not use if-else or any other comparison operator. -->
 
 8. **English Int:** Given any integer, print an English phrase that describes the integer (e.g., "One Thousand, Two Hundred Thirty Four").
 
