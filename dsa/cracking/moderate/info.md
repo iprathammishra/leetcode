@@ -6,7 +6,7 @@
 
 <!-- 3. **Intersection:** Given two straight line segements (represented as a start point and an end point), computer the point of intersection, if any. -->
 
-4. **Tic Tac Win:** Design an algorithm to figure out if someone has won a game of tic-tac-toe.
+<!-- 4. **Tic Tac Win:** Design an algorithm to figure out if someone has won a game of tic-tac-toe. -->
 
 5. **Factorial Zeros:** Write an algorithm which computes the number of trailing zeros in n factorial.
 
