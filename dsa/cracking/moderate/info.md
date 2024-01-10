@@ -8,7 +8,7 @@
 
 <!-- 4. **Tic Tac Win:** Design an algorithm to figure out if someone has won a game of tic-tac-toe. -->
 
-5. **Factorial Zeros:** Write an algorithm which computes the number of trailing zeros in n factorial.
+<!-- 5. **Factorial Zeros:** Write an algorithm which computes the number of trailing zeros in n factorial. -->
 
 6. **Smallest Difference:** Given two arrays of integers, computer the pair of values (one value in each array) with the smallest (non-negative) difference. Return the difference.
 
