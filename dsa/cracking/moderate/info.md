@@ -18,7 +18,7 @@ Output: That is the pair {11, 8}. -->
 
 <!-- 7. **Number Max:** Write a method that finds the maximum of two numbers. You should not use if-else or any other comparison operator. -->
 
-8. **English Int:** Given any integer, print an English phrase that describes the integer (e.g., "One Thousand, Two Hundred Thirty Four").
+<!-- 8. **English Int:** Given any integer, print an English phrase that describes the integer (e.g., "One Thousand, Two Hundred Thirty Four"). -->
 
 9. **Operations:** Write methods to implement the multiply, subtract, and divide operations for integers. The result of all these are integers. Use only the add operator.
 
