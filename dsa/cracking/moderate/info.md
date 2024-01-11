@@ -61,11 +61,11 @@ When you guess the correct color for the correct slot, you get a "hit". If you g
 
 For example, if the actual solution is RGBY and you guess GGRR, you have one hit and one pseudo-hit. Write a method that, given a guess and solution, return the number of hits and pseduo-hits. -->
 
-16. **Sub Sort:** Given an array of integers, write a method to find indices m and n such that if you sorted elements m through n, the entire array would be stored. Minimize n - m (that is, find the smallest such sequence).
+<!-- 16. **Sub Sort:** Given an array of integers, write a method to find indices m and n such that if you sorted elements m through n, the entire array would be stored. Minimize n - m (that is, find the smallest such sequence).
 
 Example:<br>
 Input: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19<br>
-Output: (3, 9)
+Output: (3, 9) -->
 
 17. **Contiguous Sequence:** You are given an array of integers (both positive and negative). Find the contiguous sequence with the largest sum. Return the sum.
 
