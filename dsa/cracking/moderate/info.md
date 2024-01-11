@@ -26,7 +26,7 @@ Output: That is the pair {11, 8}. -->
 
 <!-- 11. **Diving Board:** You are building a diving board by placing a bunch of planks of wood end-to-end. There are two types of planks, one of length shorter and one length longer. You must use exactly k planks of wood. Write a method to generate all possible lengths for the diving board. -->
 
-12. **XML Encoding:** Since XML is very verbose, you are given a way of encoding it where each tag gets mapped to a pre-defined integer value. The language/grammer is as follows:
+<!-- 12. **XML Encoding:** Since XML is very verbose, you are given a way of encoding it where each tag gets mapped to a pre-defined integer value. The language/grammer is as follows:
 
 Element --> Tag Attributes END Children END
 Attribute --> Tag Value
@@ -45,7 +45,7 @@ For example, the following XML might be converted into the compressed string bel
 Becomes:<br>
 1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0
 
-Write code to print the encoded version of an XML element (passed in Element and Attribute objects).
+Write code to print the encoded version of an XML element (passed in Element and Attribute objects). -->
 
 13. **Bisect Squares:** Given two squares on a two-dimensional place, find a line that would cut these two squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis.
 
