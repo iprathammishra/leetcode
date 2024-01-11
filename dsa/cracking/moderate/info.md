@@ -39,7 +39,7 @@ For example, the following XML might be converted into the compressed string bel
 ```xml
 <family lastname="McDowel" state="CA">
     <person firstName-"Gayle">Some Message</person>
-</familty>
+</family>
 ```
 
 Becomes:<br>
