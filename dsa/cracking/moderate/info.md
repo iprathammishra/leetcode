@@ -47,7 +47,7 @@ Becomes:<br>
 
 Write code to print the encoded version of an XML element (passed in Element and Attribute objects). -->
 
-13. **Bisect Squares:** Given two squares on a two-dimensional place, find a line that would cut these two squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis.
+<!-- 13. **Bisect Squares:** Given two squares on a two-dimensional place, find a line that would cut these two squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis. -->
 
 14. **Best Line:** Given a two-dimensional graph with points on it, find a line which passes the most number of points.
 
