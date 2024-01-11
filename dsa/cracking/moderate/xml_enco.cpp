@@ -14,8 +14,63 @@
 // </family>
 // ```
 
-// Becomes:<br>
-// 1 4 McDowell 5 CA 0 23 Gayle 0 Some Message 0 0
+// Becomes:
+// 1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0
 
 // Write code to print the encoded version of an XML element (passed in Element and Attribute objects).
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+std::unordered_map<std::string, int> tagMapping = {
+    {"family" , 1},
+    {"person", 2},
+    {"firstName", 3},
+    {"lastName", 4},
+    {"state", 5},
+};
+class Attribute {
+    public:
+        std::string tag;
+        std::string value;
 
+        Attribute(const std::string& t, const std::string& v) : tag(t), value(v) {}
+};
+class Element {
+    public:
+        std::string tag;
+        std::string value;
+        std::vector<Element> children;
+        std::vector<Attribute> attributes;
+
+        Element(const std::string& t) : tag(t) {}
+
+        std::string encode() const {
+            std::string result = std::to_string(tagMapping.at(tag)) + " ";
+
+            for (const auto& attribute: attributes)
+                result += std::to_string(tagMapping.at(attribute.tag)) + " " + attribute.value + " ";
+            result += "0 ";
+
+            for (const auto& child : children)
+                result += child.encode();
+            
+            result += value + " ";
+            return result + "0 ";
+        }
+};
+int main()
+{
+    Element family("family");
+    family.attributes.emplace_back("lastName", "McDowel");
+    family.attributes.emplace_back("state", "CA");
+
+    Element person("person");
+    person.attributes.emplace_back("firstName", "Gayle");
+    person.value = "Some Message";
+
+    family.children.push_back(person);
+
+    std::string encodedXML = family.encode();
+    std::cout << "Encoded XML: " << encodedXML << std::endl;
+    return 0;
+}

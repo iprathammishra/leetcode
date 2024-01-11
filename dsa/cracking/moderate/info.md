@@ -43,7 +43,7 @@ For example, the following XML might be converted into the compressed string bel
 ```
 
 Becomes:<br>
-1 4 McDowell 5 CA 0 23 Gayle 0 Some Message 0 0
+1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0
 
 Write code to print the encoded version of an XML element (passed in Element and Attribute objects).
 
