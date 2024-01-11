@@ -74,3 +74,5 @@ int main()
     std::cout << "Encoded XML: " << encodedXML << std::endl;
     return 0;
 }
+
+// https://chat.openai.com/share/1ca37753-e26e-4c5f-8f8f-67c1a0cadf8b
