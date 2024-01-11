@@ -31,3 +31,5 @@ int main()
     std::cout << livingPeople(people) << std::endl;
     return 0;
 }
+
+// https://chat.openai.com/share/08683e74-ab2f-47bf-abdc-4c21b4cc2839
