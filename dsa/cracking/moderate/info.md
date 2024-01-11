@@ -22,7 +22,7 @@ Output: That is the pair {11, 8}. -->
 
 <!-- 9. **Operations:** Write methods to implement the multiply, subtract, and divide operations for integers. The result of all these are integers. Use only the add operator. -->
 
-10. **Living People:** Given a list of people with their birth and death years, implement a method to compute the year with the most number of people alive. You assume that all people were born between 1900 and 2000 (inclusive). If a person was alive during any portion of that year, they should be included in that year's count. For example, Person (birth = 1908, death = 1909) is included in the counts for both 1908 and 1909.
+<!-- 10. **Living People:** Given a list of people with their birth and death years, implement a method to compute the year with the most number of people alive. You assume that all people were born between 1900 and 2000 (inclusive). If a person was alive during any portion of that year, they should be included in that year's count. For example, Person (birth = 1908, death = 1909) is included in the counts for both 1908 and 1909. -->
 
 11. **Diving Board:** You are building a diving board by placing a bunch of planks of wood end-to-end. There are two types of planks, one of length shorter and one length longer. You must use exactly k planks of wood. Write a method to generate all possible lengths for the diving board.
 
