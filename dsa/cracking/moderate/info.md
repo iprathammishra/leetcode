@@ -28,11 +28,11 @@ Output: That is the pair {11, 8}. -->
 
 <!-- 12. **XML Encoding:** Since XML is very verbose, you are given a way of encoding it where each tag gets mapped to a pre-defined integer value. The language/grammer is as follows:
 
-Element --> Tag Attributes END Children END
-Attribute --> Tag Value
-END --> 0
-Tag --> some predefined mapping to int
-Value --> string value
+Element -> Tag Attributes END Children END
+Attribute -> Tag Value
+END -> 0
+Tag -> some predefined mapping to int
+Value -> string value
 
 For example, the following XML might be converted into the compressed string below (assuming a mapping of family -> 1, person -> 2, firstName -> 3, lastName -> 4, state -> 5).
 
