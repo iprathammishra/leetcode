@@ -9,6 +9,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <string>
 std::unordered_map<int, std::string> cellMap = {
     {2, "abc"},
     {3, "def"},
@@ -22,6 +23,8 @@ std::unordered_map<int, std::string> cellMap = {
 std::vector<std::string> listOfMatchingWords(const std::vector<std::string> &words, const int &num)
 {
     std::vector<std::string> tempVector;
+    std::string key = std::to_string(num);
+
     return {"tree", "used"};
 }
 int main()
