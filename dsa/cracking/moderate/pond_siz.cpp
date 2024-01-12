@@ -37,11 +37,18 @@ std::vector<int> pondSizes(std::vector<std::vector<int>> &matrix)
 int main()
 {
     std::vector<std::vector<int>> land = {
-        {0, 2, 1, 0},
-        {0, 1, 0, 1},
-        {1, 1, 0, 1},
-        {0, 1, 0, 1}};
+        {0, 2, 1},
+        {0, 1, 0},
+        {1, 1, 0},
+        {0, 1, 0}};
     std::vector<int> pondSizesResult = pondSizes(land);
+
+    std::cout << "Pond Sizes: ";
+    for (int size : pondSizesResult)
+    {
+        std::cout << size << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
