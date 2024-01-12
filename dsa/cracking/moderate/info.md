@@ -67,11 +67,11 @@ Example:<br>
 Input: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19<br>
 Output: (3, 9) -->
 
-17. **Contiguous Sequence:** You are given an array of integers (both positive and negative). Find the contiguous sequence with the largest sum. Return the sum.
+<!-- 17. **Contiguous Sequence:** You are given an array of integers (both positive and negative). Find the contiguous sequence with the largest sum. Return the sum.
 
 Example:<br>
 Input: 2, -8, 3, -2, 4, -10<br>
-Output: 5 (i.e., {3, -2, 4})
+Output: 5 (i.e., {3, -2, 4}) -->
 
 18. **Pattern Matching:** You are given two strings, pattern and value. The pattern string consists of just the letters a and b, describing a pattern within a string. For example, the string catcatgocatgo matches the pattern aabab (where cat is a and go is b). It also matches patterns like a, ab and b. Write a method to determine if value matches pattern.
 
