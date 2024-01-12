@@ -20,17 +20,30 @@ std::unordered_map<int, std::string> cellMap = {
     {8, "tuv"},
     {9, "wxyz"},
 };
-std::vector<std::string> listOfMatchingWords(const std::vector<std::string> &words, const int &num)
+std::vector<std::string> listOfMatchingWords(std::vector<std::string> &words, const int &num)
 {
     std::vector<std::string> tempVector;
     std::string key = std::to_string(num);
-
-    return {"tree", "used"};
+    for (int i = 0; i < key.length(); ++i)
+    {
+        for (int j = 0; j < words.size(); ++j)
+            if (words[j][i] == cellMap.at(key[i] - '0')[i])
+                tempVector.push_back(words[j]);
+            else if (words[j][i] == cellMap.at(key[i] - '0')[i + 1])
+                tempVector.push_back(words[j]);
+            else if (words[j][i] == cellMap.at(key[i] - '0')[i + 2])
+                tempVector.push_back(words[j]);
+            else if (words[j][i] == cellMap.at(key[i] - '0')[i + 3])
+                tempVector.push_back(words[j]);
+        words.swap(tempVector); // Error: Swap is reloading temp again and again.
+    }
+    std::cout << std::endl;
+    return tempVector;
 }
 int main()
 {
     std::vector<std::string> w, result;
-    w = {"tree", "used", "hello", "world"};
+    w = {"tree", "used", "hello", "world", "effect", "effect"};
     result = listOfMatchingWords(w, 8733);
     for (std::string i : result)
         std::cout << i << " ";
