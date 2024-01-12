@@ -40,3 +40,5 @@ int main()
     std::cout << pair.first << " " << pair.second << std::endl;
     return 0;
 }
+
+// https://chat.openai.com/share/ce925673-8e77-483d-8047-57552978d75a
