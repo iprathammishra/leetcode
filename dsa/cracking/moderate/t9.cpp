@@ -35,16 +35,23 @@ std::vector<std::string> listOfMatchingWords(std::vector<std::string> &words, co
                 tempVector.push_back(words[j]);
             else if (words[j][i] == cellMap.at(key[i] - '0')[i + 3])
                 tempVector.push_back(words[j]);
-        words.swap(tempVector); // Error: Swap is reloading temp again and again.
+        if (tempVector.size() > 0)
+        {
+            words.swap(tempVector);
+            tempVector.clear();
+        }
+        // for (std::string s : words)
+        //     std::cout << s << " ";
+        // std::cout << std::endl;
     }
     std::cout << std::endl;
-    return tempVector;
+    return words;
 }
 int main()
 {
     std::vector<std::string> w, result;
     w = {"tree", "used", "hello", "world", "effect", "effect"};
-    result = listOfMatchingWords(w, 8733);
+    result = listOfMatchingWords(w, 333328);
     for (std::string i : result)
         std::cout << i << " ";
     std::cout << std::endl;
