@@ -87,14 +87,14 @@ Input:
 
 Output: 2, 3, 1 (in any order) -->
 
-20. **T9:** On old cell phones, users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0-4 letters. Implement an algorithm to return a list of matching words, given a sequence of digits. You are provided a list of valid words (provided in whatever data structure you'd like). The mapping is shown in the diagram below:
+<!-- 20. **T9:** On old cell phones, users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0-4 letters. Implement an algorithm to return a list of matching words, given a sequence of digits. You are provided a list of valid words (provided in whatever data structure you'd like). The mapping is shown in the diagram below:
 
 [Image](/leetcode/assets/mod20.png)
 
 Example:
 
 Input: 8733 <br>
-Output: tree, used
+Output: tree, used -->
 
 21. **Sum Swap:** Given two arrays of integers, find a pair of values (one values from each arrays) that you can swap to give the two arrays the same sum.
 

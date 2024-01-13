@@ -40,9 +40,6 @@ std::vector<std::string> listOfMatchingWords(std::vector<std::string> &words, co
             words.swap(tempVector);
             tempVector.clear();
         }
-        // for (std::string s : words)
-        //     std::cout << s << " ";
-        // std::cout << std::endl;
     }
     std::cout << std::endl;
     return words;
