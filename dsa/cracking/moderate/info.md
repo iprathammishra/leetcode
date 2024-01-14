@@ -96,11 +96,11 @@ Example:
 Input: 8733 <br>
 Output: tree, used -->
 
-21. **Sum Swap:** Given two arrays of integers, find a pair of values (one values from each arrays) that you can swap to give the two arrays the same sum.
+<!-- 21. **Sum Swap:** Given two arrays of integers, find a pair of values (one values from each arrays) that you can swap to give the two arrays the same sum.
 
 Example:
 Input: [4, 1, 2, 1, 1, 2] and [3, 6, 3, 3] <br>
-Output: {1, 3}
+Output: {1, 3} -->
 
 22. **Langton's Ant:** An ant is sitting on an infinite grid of white and black sqaures. It initially faces right. At each step, it does the following:
 
