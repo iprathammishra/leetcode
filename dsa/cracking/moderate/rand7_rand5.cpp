@@ -20,3 +20,5 @@ int main()
         std::cout << rand7() << " ";
     return 0;
 }
+
+// https://chat.openai.com/share/867f91e2-5719-457c-82f9-cd1cb616f84c
