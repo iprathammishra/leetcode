@@ -102,12 +102,12 @@ Example:
 Input: [4, 1, 2, 1, 1, 2] and [3, 6, 3, 3] <br>
 Output: {1, 3} -->
 
-22. **Langton's Ant:** An ant is sitting on an infinite grid of white and black sqaures. It initially faces right. At each step, it does the following:
+<!-- 22. **Langton's Ant:** An ant is sitting on an infinite grid of white and black sqaures. It initially faces right. At each step, it does the following:
 
 (1) At a white square, flip the color of the square, turn 90 degrees right (clockwise), and move forward one unit.
 (2) At a black square, flip the color of the square, turn 90 degrees left (counter-clockwise), and move forward one unit.
 
-Write a program to stimulate the first k moves that the ant makes and print the final board as grid. Note that you are not provided with the data structure to represent the grid. This is something you must design yourself. The only input to your method is K. You should print the final grid and return nothing. The method signature might be something like void printKMovies(int K).
+Write a program to stimulate the first k moves that the ant makes and print the final board as grid. Note that you are not provided with the data structure to represent the grid. This is something you must design yourself. The only input to your method is K. You should print the final grid and return nothing. The method signature might be something like void printKMovies(int K). -->
 
 23. **Rand7 from Rand5:** Implement a method rand7() given rand5(). That is, given a method that generates a random number between 0 and 4 (inclusive), write a method that generates a random number between 0 and 6 (inclusive).
 
