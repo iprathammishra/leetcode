@@ -109,7 +109,7 @@ Output: {1, 3} -->
 
 Write a program to stimulate the first k moves that the ant makes and print the final board as grid. Note that you are not provided with the data structure to represent the grid. This is something you must design yourself. The only input to your method is K. You should print the final grid and return nothing. The method signature might be something like void printKMovies(int K). -->
 
-23. **Rand7 from Rand5:** Implement a method rand7() given rand5(). That is, given a method that generates a random number between 0 and 4 (inclusive), write a method that generates a random number between 0 and 6 (inclusive).
+<!-- 23. **Rand7 from Rand5:** Implement a method rand7() given rand5(). That is, given a method that generates a random number between 0 and 4 (inclusive), write a method that generates a random number between 0 and 6 (inclusive). -->
 
 24. **Pairs with Sum:** Design an algorithm to find all pairs of integers within an array which sum to a specified value.
 
