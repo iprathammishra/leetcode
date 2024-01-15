@@ -54,3 +54,5 @@ int main()
     std::cout << cache.get(4) << std::endl; // Output: 4
     return 0;
 }
+
+// https://chat.openai.com/share/0afacd9b-8791-4fd2-afc4-10f4ac0f7f57
