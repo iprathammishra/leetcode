@@ -115,8 +115,8 @@ Write a program to stimulate the first k moves that the ant makes and print the 
 
 <!-- 25. **LRU Cache:** Design and build a "least recently used" cache, which evicts the least recently used item. The cache should map from keys to values (allowing you to insert and retrieve a value associated with a particular key) and be initialized with a max-size. When it is full, it should evict the least recently used item. -->
 
-26. **Calculator:** Given an arithmetic equation consisting of positive integers, +, -, \* and / (no parentheses), compute the result.
+<!-- 26. **Calculator:** Given an arithmetic equation consisting of positive integers, +, -, \* and / (no parentheses), compute the result.
 
 Example:
 Input: 2*3+5/6*3+15 <br>
-Output: 23.5
+Output: 23.5 -->
