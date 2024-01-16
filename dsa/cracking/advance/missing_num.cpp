@@ -3,16 +3,15 @@
 #include <vector>
 int findMissingNumber(const std::vector<int> &nums)
 {
-    int n = nums.size();
-    int missingNumber = n;
-    for (int i = 0; i < n; ++i)
-        missingNumber ^= i ^ nums[i];
-    return missingNumber;
+    for (int i = 0; i < nums.size(); ++i)
+        if (nums[i] != i)
+            return i;
+    return -1;
 }
 
 int main()
 {
-    std::vector<int> nums = {0, 1, 2, 4, 5};
+    std::vector<int> nums = {0, 1, 2, 3, 4};
     int result = findMissingNumber(nums);
     std::cout << "The missing number is: " << result << std::endl;
     return 0;
