@@ -8,7 +8,7 @@
 
 <!-- 4. **Missing Number:** An array A contains all the integers from 0 to n, except for one number which is missing. In this problem, we cannot access an entire integer in A with a single operation. The element of A are represented in binary, and the only operation we can use to access them is "fetch the jth bit of A[i]," which takes constant time. Write code to find the missing integer. Can you do it in O(n) time? -->
 
-5. **Letters and Numbers:** Given an array filled with letters and numbers, find the longest subarray with an equal number of letters and numbers.
+<!-- 5. **Letters and Numbers:** Given an array filled with letters and numbers, find the longest subarray with an equal number of letters and numbers. -->
 
 6. **Count of 2s:** Write a method to count the number of 2s that appear in all the numbers between 0 and n (inclusive).
 
