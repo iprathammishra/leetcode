@@ -4,7 +4,7 @@
 
 <!-- 2. **Shuffle:** Write a method to shuffle a deck of cards. It must be a perfect shuffle - in other words, each of the 52! permutations of the deck has to be equally likely. Assume that you are given a random number generator which is perfect. -->
 
-3. **Random Set:** Write a method to randomly generate a set of m integers from an array of size n. Each element must have eual probability of being chosen.
+3. **Random Set:** Write a method to randomly generate a set of m integers from an array of size n. Each element must have equal probability of being chosen.
 
 4. **Missing Number:** An array A contains all the integers from 0 to n, except for one number which is missing. In this problem, we cannot access an entire integer in A with a single operation. The element of A are represented in binary, and the only operation we can use to access them is "fetch the jth bit of A[i]," which takes constant time. Write code to find the missing integer. Can you do it in O(n) time?
 
