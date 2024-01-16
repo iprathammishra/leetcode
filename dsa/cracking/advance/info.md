@@ -2,7 +2,7 @@
 
 <!-- 1. **Add Without Plus:** Write a function that adds two numbers. You should not use + or any arithmetic operators. -->
 
-2. **Shuffle:** Write a method to shuffle a deck of cards. It must be a perfect shuffle - in other words, each of the 52! permutations of the deck has to be equally likely. Assume that you are given a random number generator which is perfect.
+<!-- 2. **Shuffle:** Write a method to shuffle a deck of cards. It must be a perfect shuffle - in other words, each of the 52! permutations of the deck has to be equally likely. Assume that you are given a random number generator which is perfect. -->
 
 3. **Random Set:** Write a method to randomly generate a set of m integers from an array of size n. Each element must have eual probability of being chosen.
 
