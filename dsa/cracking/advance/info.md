@@ -10,12 +10,12 @@
 
 <!-- 5. **Letters and Numbers:** Given an array filled with letters and numbers, find the longest subarray with an equal number of letters and numbers. -->
 
-6. **Count of 2s:** Write a method to count the number of 2s that appear in all the numbers between 0 and n (inclusive).
+<!-- 6. **Count of 2s:** Write a method to count the number of 2s that appear in all the numbers between 0 and n (inclusive).
 
 Example:
 
 Input: 25 <br>
-Output: 9 (2, 12, 20, 21, 22, 23, 24 and 25. Note that 22 counts for two 2s).
+Output: 9 (2, 12, 20, 21, 22, 23, 24 and 25. Note that 22 counts for two 2s). -->
 
 7. **Baby Names:** Each year, the government releases a list of the 10000 most common baby names and their frequencies (the number of babies with that name). The only problem with this is that some names have multiple spellings. For example, "John" and "Jon" are essentially the same name but would be listed separately in the list. Given two lists, one of names/frequencies and the other of pairs of equivalent names. Write an algorithm to print a new list of the true frequency of each name. Note that if John and Jon are synonyms, and Jon and Johnny are synonyms, then John and Johnny are synonyms. (It is both transitive and symmetric.) In the final list, any name can be used as the "real" name.
 
