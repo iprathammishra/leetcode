@@ -26,12 +26,12 @@ Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)<br>
 Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Christopher, Chris)<br>
 Output: John (27), Kris (36) -->
 
-8. **Circus Tower:** A circus is designing a tower routine consisting of people standing atop one another's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.
+<!-- 8. **Circus Tower:** A circus is designing a tower routine consisting of people standing atop one another's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.
 
 Example: <br>
 Input (ht, wt): (65, 100) (70, 150), (56, 90) (75, 190) (60, 95) (68, 110) <br>
 Output: The longest tower is length of 6 and includes from top to bottom:<br>
-(56, 90) (60, 95) (65, 100) (68, 110) (70, 150) (75, 190)
+(56, 90) (60, 95) (65, 100) (68, 110) (70, 150) (75, 190) -->
 
 9. **Kth Multiple:** Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7. Note that 3, 5, and 7 do not have to be factors, but it should not have other prime factors. For example, the first several multiples would be (in order) 1, 3, 5, 7, 9, 15, 21
 
