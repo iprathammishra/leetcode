@@ -8,18 +8,26 @@
 // Output: John (27), Kris (36)
 #include <iostream>
 #include <unordered_map>
-std::unordered_map<std::string, int> babyNames(std::unordered_map<std::string, int> &names, std::unordered_map<std::string, std::string> &synonyms)
-{
-    std::unordered_map<std::string, int> fMap = {{"xc", -1}};
-    for (std::pair<std::string, int> pair : names)
-        if (synonyms.find(pair.first) != synonyms.end())
-            if (names.find(synonyms.at(pair.first)) == names.end())
-                synonyms.erase(pair.first);
+#include <vector>
+#include <algorithm>
 
-    // for (std::pair<std::string, std::string> pair : synonyms)
-    //     std::cout << pair.first << " " << pair.second << std::endl;
-    return fMap;
+std::string findRepresentative(const std::unordered_map<std::string, std::string> &synonyms, const std::string &name)
+{
+    if (synonyms.find(name) == synonyms.end())
+        return name;
+    return findRepresentative(synonyms, synonyms.at(name));
 }
+std::unordered_map<std::string, int> calculateTrueFrequencies(const std::unordered_map<std::string, int> &names, const std::unordered_map<std::string, std::string> &synonyms)
+{
+    std::unordered_map<std::string, int> trueFrequencies;
+    for (const auto &nameFreq : names)
+    {
+        std::string representative = findRepresentative(synonyms, nameFreq.first);
+        trueFrequencies[representative] += nameFreq.second;
+    }
+    return trueFrequencies;
+}
+
 int main()
 {
     std::unordered_map<std::string, int> names = {
@@ -28,13 +36,19 @@ int main()
         {"Chris", 13},
         {"Kris", 4},
         {"Christopher", 19}};
+
     std::unordered_map<std::string, std::string> synonyms = {
         {"Jon", "John"},
         {"John", "Johnny"},
         {"Chris", "Kris"},
         {"Christopher", "Chris"}};
-    std::unordered_map<std::string, int> fMap = babyNames(names, synonyms);
-    for (std::pair<std::string, int> pair : fMap)
-        std::cout << pair.first << " " << pair.second << std::endl;
+
+    std::unordered_map<std::string, int> trueFrequencies = calculateTrueFrequencies(names, synonyms);
+
+    for (const auto &trueFreq : trueFrequencies)
+    {
+        std::cout << trueFreq.first << " (" << trueFreq.second << "), ";
+    }
+
     return 0;
 }
