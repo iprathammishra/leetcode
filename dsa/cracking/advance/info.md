@@ -17,14 +17,14 @@ Example:
 Input: 25 <br>
 Output: 9 (2, 12, 20, 21, 22, 23, 24 and 25. Note that 22 counts for two 2s). -->
 
-7. **Baby Names:** Each year, the government releases a list of the 10000 most common baby names and their frequencies (the number of babies with that name). The only problem with this is that some names have multiple spellings. For example, "John" and "Jon" are essentially the same name but would be listed separately in the list. Given two lists, one of names/frequencies and the other of pairs of equivalent names. Write an algorithm to print a new list of the true frequency of each name. Note that if John and Jon are synonyms, and Jon and Johnny are synonyms, then John and Johnny are synonyms. (It is both transitive and symmetric.) In the final list, any name can be used as the "real" name.
+<!-- 7. **Baby Names:** Each year, the government releases a list of the 10000 most common baby names and their frequencies (the number of babies with that name). The only problem with this is that some names have multiple spellings. For example, "John" and "Jon" are essentially the same name but would be listed separately in the list. Given two lists, one of names/frequencies and the other of pairs of equivalent names. Write an algorithm to print a new list of the true frequency of each name. Note that if John and Jon are synonyms, and Jon and Johnny are synonyms, then John and Johnny are synonyms. (It is both transitive and symmetric.) In the final list, any name can be used as the "real" name.
 
 Example:
 
 Input:<br>
 Names: John (15), Jon (12), Chris (13), Kris (4), Christopher (19)<br>
 Synonyms: (Jon, John), (John, Johnny), (Chris, Kris), (Christopher, Chris)<br>
-Output: John (27), Kris (36)
+Output: John (27), Kris (36) -->
 
 8. **Circus Tower:** A circus is designing a tower routine consisting of people standing atop one another's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.
 
