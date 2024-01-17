@@ -35,11 +35,11 @@ Output: The longest tower is length of 6 and includes from top to bottom:<br>
 
 <!-- 9. **Kth Multiple:** Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7. Note that 3, 5, and 7 do not have to be factors, but it should not have other prime factors. For example, the first several multiples would be (in order) 1, 3, 5, 7, 9, 15, 21 -->
 
-10. **Majority Element:** A majority element is an element that makes up more than half of the items in an array. Given a positive integers array, find the majority element. If there is no majority element, return -1. Do this in O(N) time and O(1) space.
+<!-- 10. **Majority Element:** A majority element is an element that makes up more than half of the items in an array. Given a positive integers array, find the majority element. If there is no majority element, return -1. Do this in O(N) time and O(1) space.
 
 Example:<br>
 Input: 1 2 5 9 5 9 5 5 5 <br>
-Output: 5
+Output: 5 -->
 
 11. **Word Distance:** You have large text file containing words. Given any two words, find the shortest distance (in terms of number of words) between them in the file. If the operation will be repeated many times for the same file (but different paris of words), can you optimize your solution?
 
