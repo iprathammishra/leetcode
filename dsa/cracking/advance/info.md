@@ -60,7 +60,7 @@ Example: <br>
 Input: jesslookedjustliketimherbrother<br>
 Output: (jess) looked just like (tim) her brother (7 unrecognized characters)
 
-14. **Smallest K:** Design an algorithm to find the smallest K numbers in an array.
+<!-- 14. **Smallest K:** Design an algorithm to find the smallest K numbers in an array. -->
 
 15. **Longest Word:** Given a list of words, write a program to find the longest word made of other words in the list.
 
