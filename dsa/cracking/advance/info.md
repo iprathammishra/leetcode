@@ -41,7 +41,7 @@ Example:<br>
 Input: 1 2 5 9 5 9 5 5 5 <br>
 Output: 5 -->
 
-11. **Word Distance:** You have large text file containing words. Given any two words, find the shortest distance (in terms of number of words) between them in the file. If the operation will be repeated many times for the same file (but different paris of words), can you optimize your solution?
+<!-- 11. **Word Distance:** You have large text file containing words. Given any two words, find the shortest distance (in terms of number of words) between them in the file. If the operation will be repeated many times for the same file (but different paris of words), can you optimize your solution? -->
 
 12. **BiNode:** Consider a simple data structure called BiNode, which has pointers to two other nodes.
 
