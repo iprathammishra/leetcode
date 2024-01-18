@@ -43,7 +43,7 @@ Output: 5 -->
 
 <!-- 11. **Word Distance:** You have large text file containing words. Given any two words, find the shortest distance (in terms of number of words) between them in the file. If the operation will be repeated many times for the same file (but different paris of words), can you optimize your solution? -->
 
-12. **BiNode:** Consider a simple data structure called BiNode, which has pointers to two other nodes.
+<!-- 12. **BiNode:** Consider a simple data structure called BiNode, which has pointers to two other nodes.
 
 ```java
 public class BiNode {
@@ -52,7 +52,7 @@ public class BiNode {
 }
 ```
 
-The data structure BiNode could be used to represent both a binary tree (where node1 is the left node and node2 is the right node) or a doubly linked list (where node1 is the previous node and node2 is the next node.) Implement a method to convert a binary search tree (implemented with BiNode) into a doubly linked list. The values should be kept in order and the operation should be performed in place (that is, on the original data structure).
+The data structure BiNode could be used to represent both a binary tree (where node1 is the left node and node2 is the right node) or a doubly linked list (where node1 is the previous node and node2 is the next node.) Implement a method to convert a binary search tree (implemented with BiNode) into a doubly linked list. The values should be kept in order and the operation should be performed in place (that is, on the original data structure). -->
 
 13. **Re-space:** Oh, no! You have accidentally removed all spaces, punctuation, and capitalization in a lengthy document. A sentence like "I reset the computer. It still didn't boot!" became "iresetthecomputeritstilldidntboot". You'll deal with the punctuation and capitalization later; right now you need to re-insert the spaces. Most of the words are in a dictionary but a few are not. Given a dictionary (a list of strings) and the document (a string), design an algorithm to unconcatenate the document in a way that minimizes the number of unrecognized characters.
 
