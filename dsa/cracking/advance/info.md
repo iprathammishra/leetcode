@@ -68,7 +68,7 @@ Example:<br>
 Input: cat, banana, dog, nana, walk, walker, dogwalker <br>
 Output: dogwalker -->
 
-16. **The Masseuse:** A popular masseuse receives a sequence of back-to-back appointments and therefore she cannot accept any adjacent requests. Given a sequence of back-to-back appointment requests (all multiples of 15 minutes, none overlap, and none can be moved), fins the optimal (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
+16. **The Masseuse:** A popular masseuse receives a sequence of back-to-back appointments and therefore she cannot accept any adjacent requests. Given a sequence of back-to-back appointment requests (all multiples of 15 minutes, none overlap, and none can be moved), find the optimal (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
 
 Example:<br>
 Input: {30, 15, 60, 75, 45, 15, 15, 45}<br>
