@@ -62,11 +62,11 @@ Output: (jess) looked just like (tim) her brother (7 unrecognized characters) --
 
 <!-- 14. **Smallest K:** Design an algorithm to find the smallest K numbers in an array. -->
 
-15. **Longest Word:** Given a list of words, write a program to find the longest word made of other words in the list.
+<!-- 15. **Longest Word:** Given a list of words, write a program to find the longest word made of other words in the list.
 
 Example:<br>
 Input: cat, banana, dog, nana, walk, walker, dogwalker <br>
-Output: dogwalker
+Output: dogwalker -->
 
 16. **The Masseuse:** A popular masseuse receives a sequence of back-to-back appointments and therefore she cannot accept any adjacent requests. Given a sequence of back-to-back appointment requests (all multiples of 15 minutes, none overlap, and none can be moved), fins the optimal (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
 
