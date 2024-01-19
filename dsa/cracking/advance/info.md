@@ -74,7 +74,7 @@ Example:<br>
 Input: {30, 15, 60, 75, 45, 15, 15, 45}<br>
 Output: 180 minutes ({30, 60, 45, 45}). -->
 
-17. **Multi Search:** Given a string b and an array of smaller strings T, design a method to search b for each small string in T.
+<!-- 17. **Multi Search:** Given a string b and an array of smaller strings T, design a method to search b for each small string in T. -->
 
 18. **Shortest Supersequence:** You are given two arrays, one shorter (with all distinct elements) and one longer. Find the shortest subarray in the longer array that contains all the elements in the shorter array. The items can appear in any order.
 
