@@ -68,11 +68,11 @@ Example:<br>
 Input: cat, banana, dog, nana, walk, walker, dogwalker <br>
 Output: dogwalker -->
 
-16. **The Masseuse:** A popular masseuse receives a sequence of back-to-back appointments and therefore she cannot accept any adjacent requests. Given a sequence of back-to-back appointment requests (all multiples of 15 minutes, none overlap, and none can be moved), find the optimal (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
+<!-- 16. **The Masseuse:** A popular masseuse receives a sequence of back-to-back appointments and therefore she cannot accept any adjacent requests. Given a sequence of back-to-back appointment requests (all multiples of 15 minutes, none overlap, and none can be moved), find the optimal (highest total booked minutes) set the masseuse can honor. Return the number of minutes.
 
 Example:<br>
 Input: {30, 15, 60, 75, 45, 15, 15, 45}<br>
-Output: 180 minutes ({30, 60, 45, 45}).
+Output: 180 minutes ({30, 60, 45, 45}). -->
 
 17. **Multi Search:** Given a string b and an array of smaller strings T, design a method to search b for each small string in T.
 
