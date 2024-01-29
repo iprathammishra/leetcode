@@ -84,7 +84,7 @@ Output: [7, 10] (the underlined portion above)
 
 <!-- 19. **Missing Two:** You are given an array with all the numbers from 1 to N appearing exactly once, except for one number that is missing. How can you find the missing number in O(N) time and O(1) space? What if there were two numbers missing? -->
 
-20. **Continuous Median:** Numbers are randomly generated and passed to a method. Write a program to find and maintain the median value as new values are generated.
+<!-- 20. **Continuous Median:** Numbers are randomly generated and passed to a method. Write a program to find and maintain the median value as new values are generated. -->
 
 21. **Volume of Histogram:** Imagine a histogram (bar graph). Design an algorithm to compute the volume of water it could hold if someone poured water across the top. You can assume that each histogram bar has width 1.
 
