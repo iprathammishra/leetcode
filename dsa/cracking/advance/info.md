@@ -86,16 +86,16 @@ Output: [7, 10] (the underlined portion above)
 
 <!-- 20. **Continuous Median:** Numbers are randomly generated and passed to a method. Write a program to find and maintain the median value as new values are generated. -->
 
-21. **Volume of Histogram:** Imagine a histogram (bar graph). Design an algorithm to compute the volume of water it could hold if someone poured water across the top. You can assume that each histogram bar has width 1.
+<!-- 21. **Volume of Histogram:** Imagine a histogram (bar graph). Design an algorithm to compute the volume of water it could hold if someone poured water across the top. You can assume that each histogram bar has width 1.
 
 Example: (Black bars are the histogram. Gray is water.)<br>
 Input: {0, 0, 4, 0, 0, 6, 0, 0, 3, 0, 5, 0, 1, 0, 0, 0}
 
 [Image](/leetcode/assets/adv21.png)
 <br>
-Output: 26
+Output: 26 -->
 
-22. **Word Transform:** Given two words of equal length that are in a dictionary, write a method to transform one word into another word by changing only one letter at a time. Thr new word you get in each step must be in the dictionary.
+22. **Word Transform:** Given two words of equal length that are in a dictionary, write a method to transform one word into another word by changing only one letter at a time. The new word you get in each step must be in the dictionary.
 
 Example: <br>
 Input: DAMP, LIKE<br>
