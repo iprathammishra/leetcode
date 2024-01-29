@@ -76,11 +76,11 @@ Output: 180 minutes ({30, 60, 45, 45}). -->
 
 <!-- 17. **Multi Search:** Given a string b and an array of smaller strings T, design a method to search b for each small string in T. -->
 
-18. **Shortest Supersequence:** You are given two arrays, one shorter (with all distinct elements) and one longer. Find the shortest subarray in the longer array that contains all the elements in the shorter array. The items can appear in any order.
+<!-- 18. **Shortest Supersequence:** You are given two arrays, one shorter (with all distinct elements) and one longer. Find the shortest subarray in the longer array that contains all the elements in the shorter array. The items can appear in any order.
 
 Example:<br>
 Input: {1, 5, 9} | {7, 5, 9, 0, 2, 1, 3, (5, 7, 9, 1), 1, 5, 8, 8, 9, 7}<br>
-Output: [7, 10] (the underlined portion above)
+Output: [7, 10] (the underlined portion above) -->
 
 <!-- 19. **Missing Two:** You are given an array with all the numbers from 1 to N appearing exactly once, except for one number that is missing. How can you find the missing number in O(N) time and O(1) space? What if there were two numbers missing? -->
 
@@ -101,7 +101,7 @@ Example: <br>
 Input: DAMP, LIKE<br>
 Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
 
-23. **Max Black Square:** Imagine you have a square matrix, where each cell (pixel) is either black or white. Design an alogrithm to find the maximum subsquare such that all four borders are filled with black pixels.
+<!-- 23. **Max Black Square:** Imagine you have a square matrix, where each cell (pixel) is either black or white. Design an alogrithm to find the maximum subsquare such that all four borders are filled with black pixels. -->
 
 24. **Max Submatrix:** Given an NxN matrix of positive and negative integers, write code to find the submatrix with the largest possible sum.
 
