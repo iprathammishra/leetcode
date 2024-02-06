@@ -57,7 +57,7 @@ int main()
 
     // Intentionally creating loop.
     Node *temp = head;
-    while (!temp->next)
+    while (temp->next)
         temp = temp->next;
     temp->next = head;
 
