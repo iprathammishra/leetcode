@@ -1,4 +1,4 @@
-// Hare & Tortoise Algorithm
+// Hare & Tortoise Algorithm ||Floyd's Cycle Detection Algorithm.
 #include <bits/stdc++.h>
 using namespace std;
 
