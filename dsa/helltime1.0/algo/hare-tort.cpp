@@ -1,5 +1,5 @@
 // Hare & Tortoise Algorithm ||Floyd's Cycle Detection Algorithm.
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class Node
@@ -35,7 +35,7 @@ public:
     {
         Node *slowPointer = head;
         Node *fastPointer = head;
-        while (!slowPointer && !fastPointer && !fastPointer->next)
+        while (slowPointer && fastPointer && fastPointer->next)
         {
             slowPointer = slowPointer->next;
             fastPointer = fastPointer->next->next;
@@ -60,4 +60,6 @@ int main()
     while (!temp->next)
         temp = temp->next;
     temp->next = head;
+
+    cout << l1.detectLoop();
 }
