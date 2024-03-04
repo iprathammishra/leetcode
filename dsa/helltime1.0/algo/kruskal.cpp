@@ -23,9 +23,10 @@ public:
         return parent[node] = findUPar(parent[node]);
     }
 
-    void unionBy Rank(int u, int v)
+    void unionByRank(int u, int v)
     {
-        int ulp_u = findUPar(u) int ulp_v = findUPar(v);
+        int ulp_u = findUPar(u);
+        int ulp_v = findUPar(v);
         if (ulp_u == ulp_v)
         {
             return;
