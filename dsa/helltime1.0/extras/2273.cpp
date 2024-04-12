@@ -1,11 +1,15 @@
-class Solution {
+class Solution
+{
 private:
-    string createSignature(string word) {
+    string createSignature(string word)
+    {
         sort(word.begin(), word.end());
         return word;
     }
+
 public:
-    vector<string> removeAnagrams(vector<string>& words) {
+    vector<string> removeAnagrams(vector<string> &words)
+    {
         vector<string> res;
         res.push_back(words[0]);
 
@@ -16,7 +20,7 @@ public:
             string currentWord = createSignature(words[i]);
             if (previousWord != currentWord)
             {
-                res.push_back(words[i]);
+                res.emplace_back(words[i]);
                 previousWord = currentWord;
             }
         }
